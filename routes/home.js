@@ -1,11 +1,11 @@
-// const express = require('express');
+const express = require('express');
 
-// const router = express.Router();
+const router = express.Router();
 
-// const homeController = require('../controllers/home_controller');
+const homeController = require('../controllers/home_controller');
 
-// router.get('/home', homeController.home);
+router.get('/', homeController.home);
+router.get('/myDome', homeController.mydome);
 
 
-
-// module.exports = router;
+module.exports = router;

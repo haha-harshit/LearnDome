@@ -1,7 +1,9 @@
 
 // access main site page
 module.exports.main = function(req, res){
-    return res.end('<h1>This is main</h1>')
+    return res.render('main', {
+        title: 'LearnDome'
+    })
 }
 
 // access sign-up
@@ -15,6 +17,6 @@ module.exports.log_in = function(req, res){
 }
 
 // access log-out
-module.exports.log_out = function(req, res){
-    return res.end('<h1>This is main</h1>')
-}
+// module.exports.log_out = function(req, res){
+//     return res.end('<h1>This is main</h1>')
+// }

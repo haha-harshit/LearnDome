@@ -15,8 +15,10 @@ router.get('/sign-up', mainController.sign_up);
 //for sign-in
 router.get('/log-in', mainController.log_in);
 
-// for
-// router.get('/home', homeController.home);
 
+
+// for dashboard
+router.use('/user', require('./users'));
+router.use('/homepage', require('./home'));
 
 module.exports = router;
