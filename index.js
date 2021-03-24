@@ -5,6 +5,9 @@ const port = 8000;
 // import the layout-lib
 const expressLayouts = require('express-ejs-layouts');
 
+// importing DB
+const db = require('./config/mongoose');
+
 //use static files ---> css/js files 
 app.use(express.static('./assets'));
 

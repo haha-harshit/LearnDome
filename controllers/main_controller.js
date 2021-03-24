@@ -8,15 +8,24 @@ module.exports.main = function(req, res){
 
 // access sign-up
 module.exports.sign_up = function(req, res){
-    return res.end('<h1>Sign Up</h1>')
+    return res.render('_signup', {
+        title: 'LearnDome | Sign Up'
+    })
 }
 
 // access log-in
 module.exports.log_in = function(req, res){
-    return res.end('<h1>Log In</h1>')
+    return res.render('_login', {
+        title: 'LearnDome | Login'
+    })
 }
 
-// access log-out
-// module.exports.log_out = function(req, res){
-//     return res.end('<h1>This is main</h1>')
-// }
+// get the sign-up data
+module.exports.create_account = function(req, res){
+
+}
+
+// get the sign-in data
+module.exports.create_session = function(req, res){
+
+}

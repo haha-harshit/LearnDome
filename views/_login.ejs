@@ -1,0 +1,77 @@
+
+    <script src="https://kit.fontawesome.com/78e14d0e1e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/_login.css">
+
+    
+        <div id="outer">
+            <a id="close" href="/" rel="noopener noreferrer" title="close"><i class="far fa-times-circle"></i></a>
+            <div id="content">
+                <div id="heading">
+                    Sign In!
+                </div>
+
+                                                                <!-- Social login -->
+
+                <div id="social">
+            <!-- login through fb! -->
+                    <div class="s-fb-g fb">
+                        <!-- fb-logo -->
+                        <div class="s-logo">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>        
+                        </div>
+                        <!-- fb-text -->
+                        <div class="s-text">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+            <!-- login through google -->
+                    <div class="s-fb-g g">
+                        <!-- google-logo -->
+                        <div class="s-logo">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </div>
+                        <!-- google-text -->
+                        <div class="s-text">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                Google
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
+                                                                
+                                                                        <!-- divider -->
+
+                <div class="divider-hr">
+                    <span>or</span>
+                </div>
+
+                                                                        <!-- login form -->
+                <form action="/create-session" method="POST" id="login-form">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <button type="submit" id="login-btn">LOG IN</button>
+                </form>
+                
+                <!-- forgot password? -->
+                <div id="forgot-pass">
+                    <a href="">Forgot Your Password?</a>
+                </div>
+                <br>
+
+                <!-- sign-up-form -->
+                <div id="sign-up-head">New Here? Sign Up Now.</div>
+                <form action="" id="sign-up-form">
+                    <a href="sign-up" id="sign-up-btn">SIGN UP</a>
+                </form>
+            </div>
+            
+        </div>
+    
