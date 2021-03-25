@@ -15,7 +15,7 @@ router.get('/sign-up', mainController.sign_up);
 //for sign-in
 router.get('/log-in', mainController.log_in);
 
-
+router.post('/create-account', mainController.create_account);
 
 // for dashboard
 router.use('/user', require('./users'));
