@@ -59,7 +59,37 @@ module.exports.create_account = function(req, res){
     })
 }
 
+
 // get the sign-in data
 module.exports.create_session = function(req, res){
+    // steps for authentication
+    // find the user
+    User.findOne({email: req.body.email}, function(err, user){
+        if(err){
+            console.log('Error in finding the user while signing in!');
+            return;
+        }
 
-}
+        // handle user found
+        if(user){
+
+            // handle password match after user found
+            if(user.password != req.body.password){
+                console.log('E-mail/Password incorrect!');
+                return res.redirect('back');
+            }
+
+            // and if password match create a cookie
+            res.cookie('user_id', user.id);
+            console.log('You logged in!');
+            return res.redirect('/homepage');
+
+        }else{
+            console.log('E-mail/Password incorrect!');
+            // handle user not found
+            // console.log('io');
+            return res.redirect('back');
+        }
+    });
+
+};

@@ -9,13 +9,18 @@ const mainController = require('../controllers/main_controller');
 // before log-in
 router.get('/', mainController.main);
 
-// for sign-up
+// for sign-up-form
 router.get('/sign-up', mainController.sign_up);
 
-//for sign-in
+//for log-in-form
 router.get('/log-in', mainController.log_in);
 
+// for account creation(sign-up)
 router.post('/create-account', mainController.create_account);
+
+// for session creation(log-in)
+router.post('/create-session', mainController.create_session);
+
 
 // for dashboard
 router.use('/user', require('./users'));
