@@ -3,3 +3,9 @@ module.exports.mydome = function(req, res){
         title: 'LearnDome | Dashboard'
     });
 };
+
+module.exports.profile = function(req, res){
+    return res.render('_profile', {
+        title: 'LearnDome | Your Profile'
+    });
+};

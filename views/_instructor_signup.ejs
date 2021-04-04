@@ -1,0 +1,86 @@
+
+	<link rel="stylesheet" type="text/css" href="./css/inst_signup.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<img class="wave" src="./images/wave.svg">
+	<div class="container">
+		<div class="img">
+			<img src="./images/undraw_maker_launch_crhe.svg">
+		</div>
+		<div class="login-content">
+			<form action="/create-inst-account" method="POST" id="inst-signup-form">
+				<!-- <img src="./images/undraw_profile_pic_ic5t.svg"> -->
+				<h2 class="title">Start Guiding!</h2>
+                <!-- <h2>World's Future is in your Hands!</h2> -->
+           		<div class="tab one">
+           		    <div class="i">
+           		   		<i class="fas fa-circle"></i>
+           		    </div>
+           		    <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" oninput="this.className= ''" name="username" >
+           		    </div>
+           		</div>
+           		<div class="tab one">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="div">
+                        <h5>E-Mail</h5>
+                        <input type="email" class="input" oninput="this.className= ''" name="email" >
+                    </div>
+                </div>
+                <div class="tab one">
+                    <div class="i">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Organization</h5>
+                        <input type="text" class="input" oninput="this.className= ''" name="organization" >
+                    </div>
+                </div>
+                <div class="tab one">
+                    <div class="i">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" class="input" oninput="this.className= ''" name="password" >
+                    </div>
+                </div>
+                <div class="tab one">
+                    <div class="i">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Confirm Password</h5>
+                        <input type="password" class="input" oninput="this.className= ''" name="confirm_password" >
+                    </div>
+                </div>
+                
+                <!-- control prev and next -->
+                <!-- <div style="overflow:auto;">
+                    <div style="float:right;">
+                      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
+                </div> -->
+                
+                <!-- Circles which indicates the steps of the form: -->
+                <!-- <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div> -->
+
+
+            	<input type="submit" class="btn" value="Sign Up">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/inst_signup.js"></script>
+    <!-- <script type="text/javascript" src="js/inst_multi_form"></script> -->

@@ -93,14 +93,14 @@ body{
       top:0;
       left:0;
       padding:0;
-      z-index:1;
+      /* z-index:1; */
   }
 
   .nav-trigger{
       position: absolute;
       top:0;
       left:0;
-      z-index:1;
+      /* z-index:1; */
       padding:15px;
       display:none;
   }
@@ -119,7 +119,7 @@ body{
     height:100%;
     position:absolute;
     background:var(--heaven);
-    z-index:2;
+    /* z-index:1; */
     transition:all .3s ease;
     -webkit-transition:all .3s ease;
     -moz-transition:all .3s ease;
@@ -238,7 +238,7 @@ nav .navbar a:hover{
     background-position: center;
     position: absolute;
     bottom:-22px;
-    z-index:-1;
+    /* z-index:-1; */
     
 }
 .magic-shadow-sm{
@@ -257,7 +257,7 @@ nav .navbar a:hover{
     bottom:-20px;
     left:50%;
     transform:translateX(-50%);
-    z-index:-1;
+    /* z-index:-1; */
     -webkit-transform:translateX(-50%);
     -moz-transform:translateX(-50%);
     -ms-transform:translateX(-50%);
@@ -463,13 +463,13 @@ section.top-products .food-slider .food-card button:hover{
     position:absolute;
     top:46%;
     left:-3rem;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .next-btn{
     position:absolute;
     top:46%;
     right:-3rem;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .top-products .slider{
     position: relative;
@@ -501,7 +501,7 @@ section.about-meal p{
 section.our-services{
     background:var(--light);
     position:relative;
-    z-index:0;
+    /* z-index:0; */
 }
 section.our-services .card-wrapper{
     margin-right:-2rem;
@@ -592,7 +592,7 @@ section.big-deal .timer div span:last-child{
 section.latest-news{
     background:var(--light);
     position:relative;
-    z-index:0;
+    /* z-index:0; */
 }
 section.latest-news .article-wrapper{
     display:flex;
@@ -951,6 +951,91 @@ footer.copyright a{
    
 }
 
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: darkorchid;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    /* opacity: 0.8; */
+    /* position: fixed; */
+    /* bottom: 23px; */
+    right: 475px;
+    width: 100px;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    background-color:#4CAF50;
+    /* width: 400px; */
+    display: none;
+    position: fixed;
+    margin-top: 50%;
+    margin-left: -30%;
+    border: 3px solid #f1f1f1;
+    z-index: 1
+  }
+  
+  .form-popup h1{
+      color: #2D333F;
+  }
+
+  .form-popup a:link{
+      /* text-decoration: none; */
+      color: cadetblue;
+      background-color:#2D333F;
+  }
+  .form-popup .opt{
+      color: cadetblue;
+      color:#4CAF50;
+  }
+
+
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    /* opacity: 0.8; */
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
 
 
 

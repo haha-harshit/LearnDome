@@ -91,23 +91,74 @@
                             <a href="#"><img src="./icons/search.svg" alt=""></a>
                         </div>
                         <div class="auth flex items-center">
-                            <div>
+                            <!-- <div>
                                 
-                                <a href="log-in">
+                                <a href="">
                                     <img src="./icons/user-icon.svg" alt="">
                                     Log in
                                 </a>
+                            </div> -->
+                            <button class="open-button" onclick="openLoginForm()">Log In</button>
+                            <div class="form-popup" id="login-popup">
+                                
+                                <form action="/" class="form-container">
+                                    <h1>Login as...</h1>
+                                    <div class="student">
+                                        <h4>
+                                            <a class="opt" href="/log-in-student">Log In as a STUDENT</a>
+                                        </h4>
+                                    </div>
+                                    <br>
+                                    <div class="instructor">
+                                        <h4>
+                                            <a class="opt" href="/log-in-instructor">Log In as a INSTRUCTOR</a>
+                                        </h4>  
+                                    </div>
+                                    
+                                    <!-- <label for="email"><b>Email</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+                              
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                              
+                                    <button type="submit" class="btn">Login</button> -->
+                                    <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
+                                </form>
                             </div>
+
                             <span class="divider">|</span>
-                            <div>
-                                <img src="./icons/edit.svg" alt="">
-                                <a href="#">Register Now</a>
+                            
+                            <button class="open-button" onclick="openSignupForm()">Sign Up</button>
+                            <div class="form-popup" id="signup-popup">
+                                
+                                <form action="/" class="form-container">
+                                    <h1>Sign Up as...</h1>
+                                    <div class="student">
+                                        <h4>
+                                            <a class="opt" href="/sign-up-student">Sign Up as a STUDENT</a>
+                                        </h4>
+                                    </div>  
+                                    <br>
+                                    <div class="instructor">
+                                        <h4>
+                                            <a class="opt" href="/sign-up-instructor">Sign Up as a INSTRUCTOR</a>
+                                        </h4>
+                                    </div>
+                                    
+                                  <!-- <label for="email"><b>Email</b></label>
+                                  <input type="text" placeholder="Enter Email" name="email" required>
+                              
+                                  <label for="psw"><b>Password</b></label>
+                                  <input type="password" placeholder="Enter Password" name="psw" required>
+                              
+                                  <button type="submit" class="btn">Login</button> -->
+                                  <button type="button" class="btn cancel" onclick="closeSignupForm()">Close</button>
+                                </form>
                             </div>
-                            <span class="divider">|</span>
-                            <div>
-                                <img src="./icons/cart.svg" alt="">
-                                <a href="#">0 Courses</a>
-                            </div>
+                            <!-- <span class="divider">|</span> -->
+                            
+
+                            
                         </div>
                     </div>
                 </header>
@@ -543,6 +594,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/pop-up.js"></script>
 </body>
 
 </html>
