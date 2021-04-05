@@ -37,8 +37,9 @@ router.post('/create-session-instructor', passport.authenticate(
 router.get('/destroy-session', mainController.destroy_session);
 
 
-// for dashboard
+// include other routes
 router.use('/user', require('./users'));
 router.use('/homepage', require('./home'));
+router.use('/course', require('./course'));
 
 module.exports = router;

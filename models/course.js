@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const courseSchema = new mongoose.Schema({
-    c_content: {
+    c_url: {
         type: String,
         required: true
     },

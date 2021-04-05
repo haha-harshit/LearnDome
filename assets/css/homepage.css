@@ -41,8 +41,9 @@ header{
 
 .right-area{
 	display: flex;
-	justify-content: center;
-
+	justify-content: space-between;
+	align-items: center;
+	width: 160px;
 }
 
 .logout-btn{

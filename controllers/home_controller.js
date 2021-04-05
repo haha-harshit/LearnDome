@@ -1,7 +1,14 @@
+
+const Course = require('../models/course');
+
 module.exports.home = function(req, res){
-    return res.render('homepage',{
-        title: 'LearnDome'
-    })
+
+    Course.find({}).populate('instructor').exec(function(err, courses){
+        return res.render('homepage',{
+            title: 'LearnDome',
+            courses: courses
+        });   
+    });
 }
 
 module.exports.mydome = function(req, res){
