@@ -8,6 +8,9 @@
         <%= title %>
     </title>
     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="/css/homepage.css"> -->
+    <link rel="stylesheet" href="/css/layout.css">
     <!-- <link rel="stylesheet" href="/css/layout.css"> -->
     <!-- extracting styles from subpages into layout -->
     <%- style %>
@@ -15,12 +18,61 @@
 </head>
 <body>
 
+    <input type="checkbox" id="check">
+	<!--Header start-->
+	<header>
+		<div id="label-out">
+			<label for="check">
+				<i class="fa fa-bars" id="sidebar-btn"></i>
+			</label>	
+		</div>
+		<div id="header-div">
 
+			<div class="left-area">
+				<h3>Learn<span>Dome</span></h3>
+			</div>
+			<div class="right-area">
+				<div id="upload-img">
+					<img src="./images/icons8-upload-50.png" style="scale: 0.6;">
+				</div>
+				<div id="log-out-out">
+					<a href="/destroy-session" class="logout-btn">Log Out</a>
+				</div>
+				
+			</div>
+		</div>
+	</header>
+	<!--header end-->
+
+	<div id="sidebar-out">
+		<!--sidebar start-->
+		<div class="sidebar">
+			<aside class="">	
+				
+					<center>
+						<img src="../images/undraw_profile_pic_ic5t.svg" alt="profile-pic" class="profile-image">
+						<h4><%= user.username %></h4>
+					</center>
+					<a href="/user/profile" target="_blank"><i class="fa fa-user"></i><span>Profile</span></a>
+					<a href="/homepage"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
+					<a href="#"><i class="fa fa-book"></i><span>Library</span></a>
+					<a href="#"><i class="fa fa-inbox"></i><span>Inbox</span></a>
+					<a href="#"><i class="fa fa-cogs"></i><span>Settings</span></a>
+					<a href="#"><i class="fa fa-info"></i><span>Inquiry</span></a>
+				
+				<!--sidebar end-->
+			</aside>
+		</div>
+		
+	</div>
     
-
-    <!-- Layout is just a wrapper -->
-    <!-- predefined keyword for variables that will be filled-in here -->
-    <%- body %>
+    <main>
+		<div class="content">
+            <!-- Layout is just a wrapper -->
+            <!-- predefined keyword for variables that will be filled-in here -->
+            <%- body %>
+        </div>
+    </main>
 
 
     
@@ -31,3 +83,16 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

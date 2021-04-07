@@ -1,7 +1,7 @@
 const Course = require('../models/course');
 const Instructor = require('../models/instructor');
 
-
+ 
 module.exports.create_course = function(req, res){
     Course.create({
         c_url: req.body.c_url,
@@ -16,5 +16,18 @@ module.exports.create_course = function(req, res){
         }
         console.log(course);
         return res.redirect('back');
+    });
+};
+
+module.exports.course_modal = function(req, res){
+    Course.findById(req.params.id, function(err, courses){
+        // console.log('Exploring Course...');
+        // console.log(req.params.id);
+        return res.render('dashboard',{
+            title: courses.c_name,
+            c: courses,
+            layout: '../views/student_layout/layout'
+            // async: true
+        });
     });
 };

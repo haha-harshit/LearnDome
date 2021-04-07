@@ -159,61 +159,53 @@ label #sidebar-btn:hover{
 
 /* content-main */
 /* recommend section */
-#recommendations{
+/* #recommendations{
 	background-color:whitesmoke;
 }
 #recommendations-from-org-out{
 	padding: 30px 60px;
-}
-.section-content{
+} */
+/* .section-content{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	/* width: 50%; */
 	margin-top: 30px;
-}
+} */
 
-.song-out:hover > .dot-img{
+/* .song-out:hover > .dot-img{
 	margin-top: -20px;
 	margin-left: -20px;
 	display: block;
 	opacity: 0.2;
 	transform: scale(1.03);
 	transition: transform 0.2s display 0.20s opacity 0.20s margin-top 0.20s margin-left 0.20s;
-}
+} */
 
 /* dot-img */
-.dot-img{
+/* .dot-img{
 	width: 80.05px;
 	height: 79.05px;
-	/* margin-top: ; */
-	/* padding: -7px; */
-	/* z-index: ; */
 	position: absolute;
 	margin-top: -15px;
 	rotate: 180deg;
 	margin-left: -15px;
-	/* display: none; */
+	
 	opacity: 0.00;
-	/* scale: 0.7; */
 	transition: 0.20s ease-in-out;
 	
-}
+} */
 
-.song{
+/* .song{
 	opacity: 0.9;
 	border-radius: 3px;
 	box-shadow: 0px 0px 10px -6px black;
-	/* z-index: 1; */
+	
 	transition: 0.20s ease-in-out
-}
-.song:hover{
+} */
+/* .song:hover{
 	opacity: 1;
 	box-shadow: 0px 5px 15px -6px black;
 	transition: box-shadow 0.20s ease-in-out;
-}
-.song:hover #dot-img{
-	display: block;
 }
 
 .song-icon img{
@@ -239,4 +231,4 @@ label #sidebar-btn:hover{
 	max-width: 150px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
+} */
