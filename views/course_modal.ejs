@@ -1,0 +1,74 @@
+
+
+    
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <div id="top-bar"></div>
+    <div id="content-2">
+        <a href="/">Back</a>
+        <!-- <h1>Dashboard</h1> -->
+        <div id="course-name-wrap">
+        <!-- <h1 id="course-name"><%= c.c_name %></h1> -->
+            <br>
+            <div id="course-name">
+                <%= c.c_name %>
+            </div>
+            <small id="rating-no">
+                Ratings: 4
+            </small>
+            <br>
+            <small id="reviews-no">
+                398 Reviews
+            </small>
+            <br>
+            <small id="course-org">
+                uploaded by: <%= c.instructor.username %>
+            </small>
+            <br>
+            <small>
+                organization: <%= c.instructor.organization %>
+            </small>
+            <br>
+        </div>
+        <br>
+        <!-- <br> -->
+
+
+
+        <% if(locals.user.enrolledCourses.includes(c._id)){%>
+            <!-- to goto course -->
+            <div id="goto-course-wrap" style="display: inline-block;">
+                <div id="goto-course">
+                    <h3><a href="<%= c.c_url %>">Go To Course</a></h3>
+                </div>
+            </div>
+        <% }else{%>
+                            <!-- to enroll-course -->
+                <div id="enroll-wrap">
+                    <div id="enroll">
+                        <form action="/course/enroll-course" method="post">
+                            <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">
+                            <input type="submit" value="Enroll in the Course">
+                        </form>
+                        
+                    </div>
+                </div>
+            <% } %>
+        
+
+
+
+        
+
+        <br>
+        <br>
+        <div id="about-course-wrap">
+            <div id="about-course">
+                <article>
+                    <h2>About this Course</h2>
+                    <p><%= c.c_description %></p>
+                    <%= c._id %>
+                </article>
+            </div>
+        </div>
+    </div>
+

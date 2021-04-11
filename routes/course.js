@@ -12,4 +12,7 @@ router.post('/create-course',passport.checkAuthentication ,courseController.crea
 // exploring a course---open a mini course modal
 router.get('/course-modal/:id', courseController.course_modal);
 
+// 
+router.post('/enroll-course', courseController.course_enroll);
+
 module.exports = router;
