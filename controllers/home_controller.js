@@ -10,23 +10,23 @@ module.exports.home = function(req, res){
     //     return res.render('homepage',{
     //         title: 'LearnDome',
     //         courses: courses
-    //     });   
+    //     });    
     // });
-
-    Course.find({}).populate('instructor').exec(function(err, courses){
-        return res.render('homepage', {
-            title: 'LearnDome',
-            courses: courses,
-            layout: '../views/student_layout/layout'
-        });
-    });
-
-};
-
-
-module.exports.mydome = function(req, res){
-    return res.render('dashboard', {
-        title: 'LearnDome | Dashboard',
-        layout: '../views/student_layout/layout'
-    });
+    Instructor.findById(req.user._id, function(err, inst){
+        if(inst){
+            return res.render('inst_homepage',{
+                title: 'LearnDome', 
+                layout: '../views/student_layout/layout'
+            })
+        }
+        else{
+            Course.find({}).populate('instructor').populate('courses').exec(function(err, courses){
+                return res.render('homepage', {
+                    title: 'LearnDome',
+                    courses: courses,
+                    layout: '../views/student_layout/layout'
+                });
+            });
+        }
+    })
 };

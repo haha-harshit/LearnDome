@@ -25,7 +25,6 @@ const instructorSchema = new mongoose.Schema({
 
     designation: {
         type: String,
-        optional: false
     },
 
     department: {

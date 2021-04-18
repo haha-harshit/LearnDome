@@ -32,33 +32,33 @@
         <br>
         <!-- <br> -->
 
+        <% if(locals.user.enrolledCourses.includes(c.c_name)){%>
 
-
-        <% if(locals.user.enrolledCourses.includes(c._id)){%>
             <!-- to goto course -->
             <div id="goto-course-wrap" style="display: inline-block;">
                 <div id="goto-course">
                     <h3><a href="<%= c.c_url %>">Go To Course</a></h3>
                 </div>
             </div>
+
         <% }else{%>
-                            <!-- to enroll-course -->
-                <div id="enroll-wrap">
-                    <div id="enroll">
-                        <form action="/course/enroll-course" method="post">
-                            <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">
-                            <input type="submit" value="Enroll in the Course">
-                        </form>
-                        
-                    </div>
+            <br>
+            <br>
+            <!-- to enroll-course -->
+            <div id="enroll-wrap">
+                <div id="enroll">
+                    <!-- <form action="/course/enroll-course" method="post">
+                        <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">
+                        <input type="submit" value="Enroll in the Course">
+                    </form> -->
+                    <form action="/course/enroll-course" method="post">
+                        <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">
+                        <input type="text" name="enrolled_c_name" id="enroll-c-name" style="display: none;" value="<%= c.c_name %>">                                
+                        <input type="submit" value="Enroll in the Course">
+                    </form>
                 </div>
-            <% } %>
-        
-
-
-
-        
-
+            </div>
+        <% } %>
         <br>
         <br>
         <div id="about-course-wrap">
@@ -66,7 +66,6 @@
                 <article>
                     <h2>About this Course</h2>
                     <p><%= c.c_description %></p>
-                    <%= c._id %>
                 </article>
             </div>
         </div>

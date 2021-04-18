@@ -18,7 +18,7 @@ const studentSchema = new mongoose.Schema({
         unique: true
     },
 
-    sex: {
+    gender: {
         type: Boolean,
         allowedValues: ['Male', 'Female'],
         optional: true
@@ -57,7 +57,7 @@ const studentSchema = new mongoose.Schema({
 
     enrolledCourses: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.String,
             ref: 'Course'
         }
     ],
@@ -65,7 +65,8 @@ const studentSchema = new mongoose.Schema({
     instructor: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Instructor'
+            ref: 'Instructor',
+            autopopulate: false
         }
     ]
 }, {
