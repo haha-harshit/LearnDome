@@ -15,7 +15,7 @@ module.exports.create_course = function(req, res){
             return;
         }
         Instructor.findById(req.user._id, function(err, course_inst){
-            course_inst.courses.push(course);
+            course_inst.courses.push(req.body.c_name);
             course_inst.save();
             console.log('course id added');
         })

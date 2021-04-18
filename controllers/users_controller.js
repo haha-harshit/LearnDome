@@ -7,7 +7,7 @@ const Instructor = require('../models/instructor');
 module.exports.mydome = function(req, res){
     Instructor.findById(req.user._id, function(err, i){
         if(i){
-            return res.render('inst_homepage',{
+            return res.render('i_mydome', {
                 title: 'LearnDome | Dashboard', 
                 layout: '../views/student_layout/layout',
             });
@@ -20,7 +20,7 @@ module.exports.mydome = function(req, res){
             //     })
             // });
             Student.findById(req.user._id).populate('enrolledCourses').exec(function(err, myCourses){
-                return res.render('mydome', {
+                return res.render('s_mydome', {
                     title: 'LearnDome | Dashboard',
                     myCourse: myCourses,
                     layout: '../views/student_layout/layout'
@@ -28,6 +28,13 @@ module.exports.mydome = function(req, res){
             });
         }
     })
+};
+
+
+
+
+
+    
     // Student.findById(req.user._id).populate('enrolledCourses').exec(function(err, myCourses){
     //     return res.render('mydome', {
     //         title: 'LearnDome | Dashboard',
@@ -43,7 +50,7 @@ module.exports.mydome = function(req, res){
     //         layout: '../views/student_layout/layout'
     //     });
     // });
-};
+
 
 module.exports.profile = function(req, res){
     return res.render('_profile', {
