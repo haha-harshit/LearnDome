@@ -16,7 +16,7 @@ module.exports.home = function(req, res){
         if(inst){
             return res.render('inst_homepage',{
                 title: 'LearnDome', 
-                layout: '../views/student_layout/layout'
+                layout: '../views/admin_layout/layout'
             })
         }
         else{

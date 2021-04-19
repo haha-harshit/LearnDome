@@ -40,7 +40,7 @@ module.exports.mydome = function(req, res){
         if(i){
             return res.render('i_mydome', {
                 title: 'LearnDome | Dashboard', 
-                layout: '../views/student_layout/layout',
+                layout: '../views/admin_layout/layout',
             });
         }else{
             Student.findById(req.user._id)
@@ -82,5 +82,12 @@ module.exports.profile = function(req, res){
     return res.render('_profile', {
         title: 'LearnDome | Your Profile',
         layout: '../views/student_layout/layout'
+    });
+};
+
+module.exports.i_profile = function(req, res){
+    return res.render('_profile', {
+        title: 'LearnDome | Your Profile',
+        layout: '../views/admin_layout/layout'
     });
 };
