@@ -5,7 +5,7 @@
     <div id="top-bar"></div>
     <div id="content-2">
         <a href="/">Back</a>
-        <!-- <h1>Dashboard</h1> -->
+        <!-- <h1>Dashboard</h1> --> 
         <div id="course-name-wrap">
         <!-- <h1 id="course-name"><%= c.c_name %></h1> -->
             <br>
@@ -47,6 +47,9 @@
             <!-- to enroll-course -->
             <div id="enroll-wrap">
                 <div id="enroll">
+                    <%= c %>
+                    <br>
+                    <%=locals.user%>
                     <!-- <form action="/course/enroll-course" method="post">
                         <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">
                         <input type="submit" value="Enroll in the Course">

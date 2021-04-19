@@ -7,12 +7,12 @@
     <h1>Your Courses</h1>
 
 
-
+    <%= locals.user %>
     
         <% for(i of locals.user.enrolledCourses){ %>
             <ul>
                 <li>
-                    <%= i %>
+                    <a href="/course/course-modal/<%= course_d.id %>"><%= i %></a>
                 </li>
             </ul>    
         <% } %>

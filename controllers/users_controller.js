@@ -4,22 +4,48 @@ const Student = require('../models/student');
 const Instructor = require('../models/instructor');
 
 
+// module.exports.mydome = function(req, res){
+//     Course.find({})
+    
+//     .populate({
+//         path: 'courses',
+//         populate: {
+//             path: 'Instructor'
+//         }
+//     })
+//     .exec(function(err, i){
+//         if(i){
+//             return res.render('i_mydome', {
+//                 title: 'LearnDome | Dashboard', 
+//                 layout: '../views/student_layout/layout'
+//             });
+//         }else{
+//             Student.findById(req.user._id)
+//             .populate('enrolledCourses')
+//             .exec(function(err, myCourses){
+//                 return res.render('s_mydome', {
+//                     title: 'LearnDome | Dashboard',
+//                     myCourse: myCourses,
+//                     layout: '../views/student_layout/layout'
+//                 });
+//             });
+//         }
+//     })
+// }
+
 module.exports.mydome = function(req, res){
-    Instructor.findById(req.user._id, function(err, i){
+    Instructor.findById(req.user._id)
+    .populate('courses')
+    .exec(function(err, i){
         if(i){
             return res.render('i_mydome', {
                 title: 'LearnDome | Dashboard', 
                 layout: '../views/student_layout/layout',
             });
         }else{
-            // Student.enrolledCourses.find({}, function(err, enc){
-            //     return res.render('mydome',{
-            //         title: 'LearnDome | Dashboard',
-            //         enc: enc,
-            //         layout: '../views/student_layout/layout'
-            //     })
-            // });
-            Student.findById(req.user._id).populate('enrolledCourses').exec(function(err, myCourses){
+            Student.findById(req.user._id)
+            .populate('enrolledCourses')
+            .exec(function(err, myCourses){
                 return res.render('s_mydome', {
                     title: 'LearnDome | Dashboard',
                     myCourse: myCourses,

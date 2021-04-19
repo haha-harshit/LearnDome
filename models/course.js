@@ -4,7 +4,7 @@ const courseSchema = new mongoose.Schema({
     c_url: {
         type: String,
         required: true
-    },
+    }, 
  
     c_name: {
         type: String,

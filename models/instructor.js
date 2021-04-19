@@ -32,14 +32,14 @@ const instructorSchema = new mongoose.Schema({
         required: false
     },
 
-    expertise: {
+    expertise: { 
         type: String,
         required: false
     },
 
     courses: [
         {
-            type: mongoose.Schema.Types.String,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Course'
         }
     ],
