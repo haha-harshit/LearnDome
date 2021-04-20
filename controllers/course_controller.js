@@ -48,28 +48,28 @@ module.exports.create_course = async function(req, res){
 };
 
 
-module.exports.create_course = function(req, res){
-    Instructor.findById(req.user._id, function(err, course_inst){
-        if(course_inst){
-            Course.create({
-                c_url: req.body.c_url,
-                c_name: req.body.c_name,
-                c_description: req.body.c_description,
-                instructor: req.user._id
-            },function(err, course){
-                if(err){
-                    console.log("Error in creating a Course!");
-                    console.log(err);
-                    return;
-                }
-                course_inst.courses.push(course);
-                course_inst.save();
-                console.log('course id added');
-                return res.redirect('back');
-            });
-        } 
-    });
-};
+// module.exports.create_course = function(req, res){
+//     Instructor.findById(req.user._id, function(err, course_inst){
+//         if(course_inst){
+//             Course.create({
+//                 c_url: req.body.c_url,
+//                 c_name: req.body.c_name,
+//                 c_description: req.body.c_description,
+//                 instructor: req.user._id
+//             },function(err, course){
+//                 if(err){
+//                     console.log("Error in creating a Course!");
+//                     console.log(err);
+//                     return;
+//                 }
+//                 course_inst.courses.push(course);
+//                 course_inst.save();
+//                 console.log('course id added');
+//                 return res.redirect('back');
+//             });
+//         } 
+//     });
+// };
 
 
 
@@ -88,7 +88,7 @@ module.exports.delete = function(req, res){
     })
 }
 
-
+// STUDENT COURSE-MODAL
 module.exports.course_modal = function(req, res){
     // Course.findById(req.params.id, function(err, courses){
     //     return res.render('course_modal',{
@@ -100,12 +100,25 @@ module.exports.course_modal = function(req, res){
     // console.log(req.user);
     Course.findById(req.params.id).populate('instructor').exec(function(err, courses){
         return res.render('course_modal',{
-            title: courses.c_name,
+            title: 'LearnDome',
             c: courses,
             layout: '../views/student_layout/layout'
         });
     });
 };
+
+
+// INSTRUCTOR COURSE-MODAL
+module.exports.inst_course_modal = function(req, res){
+    Course.findById(req.params.id).populate('instructor').exec(function(err, courses){
+        return res.render('inst_course_modal', {
+            title: 'LearnDome',
+            c: courses,
+            layout: '../views/admin_layout/layout'
+        });
+    });
+};
+
 
 // module.exports.course_enroll = function(req, res){
 //     Student.findById(req.user._id, function(err, enrolling_student){
@@ -139,14 +152,16 @@ module.exports.course_modal = function(req, res){
 
 module.exports.course_enroll = function(req, res){
     Student.findById(req.user._id, function(err, enrolling_student){
-        enrolling_student.enrolledCourses.push(req.body.enrolled_c_name);
-        enrolling_student.save();
-        console.log('Successfully Enrolled!');
-        Course.findById(req.body.enrolled_c_id, function(err, sid){
-            sid.students.push(req.user);
-            sid.save();
+        Course.findById(req.body.enrolled_c_id)
+        .populate('courses')
+        .exec(function(err, course){
+            enrolling_student.enrolledCourses.push(course);
+            enrolling_student.save();
+            course.students.push(req.user);
+            course.save();
+            console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field")
         });
+        return res.redirect('back');
     });
-    return res.redirect('back');
-}
+};

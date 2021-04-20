@@ -64,13 +64,12 @@ const Instructor = require('../models/instructor');
 module.exports.uploadedCourses = function(req, res){
     Instructor.findById(req.user._id)
     .populate('courses')
-    .exec(function(err, i){
-        if(i){
-            return res.render('i_mydome', {
-                title: 'LearnDome | Dashboard', 
-                layout: '../views/admin_layout/layout',
-            });
-        }
+    .exec(function(err, ucourses){
+        return res.render('i_mydome', {
+            title: 'LearnDome | Dashboard',
+            uc: ucourses,
+            layout: '../views/admin_layout/layout'
+        });
     })
 };
 

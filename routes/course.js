@@ -6,13 +6,18 @@ const router = express.Router();
 
 const courseController = require('../controllers/course_controller');
 
-// for creating course(uploading)
+//FOR INSTRUCTOR
+// --> for creating course(uploading)
 router.post('/create-course',passport.checkAuthentication ,courseController.create_course);
 
-// exploring a course---open a mini course modal
-router.get('/course-modal/:id', courseController.course_modal);
+// --> for viewing course modal 
+router.get('/inst-course-modal/:id', courseController.inst_course_modal);
 
-// 
+
+// exploring a course---open a mini course modal
+router.get('/student-course-modal/:id', courseController.course_modal);
+
+// student-enrollment
 router.post('/enroll-course', courseController.course_enroll);
 
 module.exports = router;

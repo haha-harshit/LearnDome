@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/dashboard.css">
+    <div id="top-bar"></div>
+    <div id="content-2">
+        <a href="/">Back</a>
+        <!-- <h1>Dashboard</h1> --> 
+        <div id="course-name-wrap">
+        <!-- <h1 id="course-name"><%= c.c_name %></h1> -->
+            <br>
+            <div id="course-name">
+                <%= c.c_name %>
+            </div>
+            <small id="rating-no">
+                Ratings: 4
+            </small>
+            <br>
+            <small id="reviews-no">
+                398 Reviews
+            </small>
+            <br>
+            <small id="course-org">
+                uploaded by: <%= c.instructor.username %>
+            </small>
+            <br>
+            <small>
+                organization: <%= c.instructor.organization %>
+            </small>
+            <br>
+        </div>
+        <br>
+    </div>

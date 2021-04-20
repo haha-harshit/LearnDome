@@ -6,17 +6,18 @@
 
     <h1>Your Courses</h1>
 
-
-    <%= locals.user %>
-    
-        <% for(i of locals.user.enrolledCourses){ %>
+    <br>
+    <br>
+        <% for(i of myCourse.enrolledCourses){ %>
             <ul>
                 <li>
-                    <a href="/course/course-modal/<%= course_d.id %>"><%= i %></a>
+                    <a href="/course/student-course-modal/<%= i._id %>"><%= i.c_name %></a>
                 </li>
             </ul>    
         <% } %>
-    
+
+
+
 
     <br>
     <br>
