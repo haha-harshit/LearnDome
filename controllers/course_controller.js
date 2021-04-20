@@ -76,14 +76,33 @@ module.exports.create_course = async function(req, res){
 
 
 // for deleting a course
-module.exports.delete = function(req, res){
+module.exports.delete_course = function(req, res){
     Course.findById(req.params.id, function(err, course){
-        if(course.id == req.user.id){
+        console.log(course);
+        a = course;
+        console.log('DELETION IN PROGRESS...');
+        // console.log(req.user.id);
+        // console.log(course.instructor);
+        if(course.instructor == req.user.id){
             course.remove();
-
+            console.log("Course Removed!");
             Instructor.findById(req.user._id, function(err, inst){
-                inst.update
+                console.log(a);
+                console.log(req.params.id);
+                inst.courses.remove(req.params.id);
+
+                // inst.update(
+                //     {},
+                //     { $pull: {courses: { $in: [req.params.id]}}},
+                //     { multi: true }
+                // )
+
+                console.log('Course deleted successfully!');
+                return res.redirect('back');
             })
+        }else{
+            console.log("Removal Failed!");
+            return res.redirect('back');
         }
     })
 }
@@ -156,11 +175,20 @@ module.exports.course_enroll = function(req, res){
         .populate('courses')
         .exec(function(err, course){
             enrolling_student.enrolledCourses.push(course);
-            enrolling_student.save();
-            course.students.push(req.user);
-            course.save();
-            console.log('Successfully Enrolled!');
-            console.log("Student added in Courses's student field")
+            if(enrolling_student.instructor.includes(course.instructor)){
+                enrolling_student.save();
+                course.students.push(req.user);
+                course.save();
+                console.log('Successfully Enrolled!');
+                console.log("Student added in Courses's student field");
+            }else{
+                enrolling_student.instructor.push(course.instructor);
+                enrolling_student.save();
+                course.students.push(req.user);
+                course.save();
+                console.log('Successfully Enrolled!');
+                console.log("Student added in Courses's student field");
+            }
         });
         return res.redirect('back');
     });

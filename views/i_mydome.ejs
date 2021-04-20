@@ -12,9 +12,19 @@
 
     <% for(course of uc.courses){ %>
        <ul>
-           <li>
-               <a href="/course/inst-course-modal/<%= course._id %>"><%= course.c_name %></a>
-           </li>
+
+            
+            <li>
+                <a href="/course/inst-course-modal/<%= course._id %>"><%= course.c_name %></a>
+                
+                <% if(locals.user && locals.user.id == course.instructor){ %>
+                    <small>
+                        <a href="/course/delete-course/<%= course._id %>">Delete Course</a>
+                    </small>
+                <% } %>
+                <br>
+                <br>
+            </li>
        </ul> 
     <% } %>
 

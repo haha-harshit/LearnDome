@@ -10,6 +10,8 @@ const courseController = require('../controllers/course_controller');
 // --> for creating course(uploading)
 router.post('/create-course',passport.checkAuthentication ,courseController.create_course);
 
+router.get('/delete-course/:id', passport.checkAuthentication, courseController.delete_course);
+
 // --> for viewing course modal 
 router.get('/inst-course-modal/:id', courseController.inst_course_modal);
 
