@@ -44,7 +44,10 @@
                 <form action="">
                     <input id="input-name" type="text" name="username" placeholder="Your name" value="<%= i.username %>" readonly>
                     <input id="input-email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= i.email %>" readonly>
-                    <input id="input-email" type="text" name="organization" placeholder="Your Organization" value="<%= i.organization %>" readonly>    
+                    <input id="input-email" type="text" name="organization" placeholder="Your Organization" value="<%= i.organization %>" readonly>
+                    <input id="department" type="text" name="department" placeholder="N.A." value="<%= i.department %>" readonly>
+                    <input id="designation" type="text" name="designation" placeholder="N.A." value="<%= i.designation %>" readonly>
+                    <input id="expertise" type="text" name="expertise" placeholder="N.A." value="<%= i.expertise %>" readonly>    
                     
                     
                     <% if(locals.user && locals.user.id == i.id){ %>

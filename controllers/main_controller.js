@@ -234,15 +234,19 @@ module.exports.create_inst_account = function(req, res){
 
 // get the sign-in data
 module.exports.create_session_student = function(req, res){
+    req.flash('success', 'Logged in successfully!');
     return res.redirect('homepage');
 }
 module.exports.create_session_instructor = function(req, res){
+    req.flash('success', 'Logged in successfully!');
     return res.redirect('homepage');
 }
 
 // logging-out
 module.exports.destroy_session = function(req, res){
     // function given by passport
+
+    req.flash('success', 'Logged Out Successfully!')
     req.logout();
     
     return res.redirect('/');
