@@ -92,26 +92,67 @@ module.exports.mydome = function(req, res){
     });
 }
     
-
+// viewing self profile(for student)
 module.exports.s_profile = function(req, res){
-    return res.render('_profile', {
+    return res.render('s_profile', {
         title: 'LearnDome | Your Profile',
         layout: '../views/student_layout/layout'
     });
 };
 
+// viewing self profile(for instructor)
 module.exports.i_profile = function(req, res){
-    return res.render('_profile', {
+    return res.render('i_profile', {
         title: 'LearnDome | Your Profile',
         layout: '../views/admin_layout/layout'
     });
 };
+
+// viewing instructor profile
 module.exports.inst_profile = function(req, res){
     Instructor.findById(req.params.id, function(err, instructor){
-        return res.render('i_profile', {
+        return res.render('v_profile', {
             title: 'LearnDome',
             i: instructor,
             layout: '../views/student_layout/layout'
         });        
     });
+};
+
+// getting the update form - student
+module.exports.stu_update_profile = function(req, res){
+    return res.render('stu_update_profile',{
+        title: 'LearnDome | Update Profile',
+        layout: '../views/student_layout/layout'
+    });
+}
+
+// getting the update form - instructor
+module.exports.inst_update_profile = function(req, res){
+    return res.render('inst_update_profile',{
+        title: 'LearnDome | Update Profile',
+        layout: '../views/admin_layout/layout'
+    });
+}
+
+// updating-instructor
+module.exports.inst_update_profile_ok = function(req, res){
+    if(req.user.id == req.params.id){
+        Instructor.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
+            return res.redirect('back');
+        });
+    }else{
+        return res.staus(401).send('UNAUTHORIZED REQUEST!');
+    };
+};
+
+// updating-student
+module.exports.stu_update_profile_ok = function(req, res){
+    if(req.user.id == req.params.id){
+        Student.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
+            return res.redirect('back');
+        });
+    }else{
+        return res.staus(401).send('UNAUTHORIZED REQUEST!');
+    };
 };

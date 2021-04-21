@@ -42,11 +42,14 @@
         <div id="contact-form-in-touch">
             <div id="form">
                 <form action="">
-                    <input id="input-name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" readonly>
-                    <input id="input-email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" readonly>
-                    <input id="input-email" type="text" name="organization" placeholder="Your Organization" value="<%= user.organization %>" readonly>
-                    
-                    <a class="sub-button" href="/user/inst-update-profile"> Edit Profile </a>
+                    <input id="name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" readonly>
+                    <input id="email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" readonly>
+                    <input id="address" type="text" name="address" placeholder="Your Address" value="<%= user.address %>" readonly>
+                    <input type="tel" id="phone" name="phoneNumber" placeholder="123-45-678" value="<%= user.phoneNumber %>" readonly>
+                    <input id="eduLevel" type="text" name="eduLevel" placeholder="Education Level" value="<%= user.eduLevel %>" readonly>
+                    <input id="des" type="text" name="description" placeholder="About You..." value="<%= user.description %>" readonly>
+
+                    <a class="sub-button" href="/user/stu-update-profile"> Edit Profile </a>
                 </form>
             </div>
         </div>

@@ -13,7 +13,7 @@
     </p>
     
     <div>
-		<p id="my_name"><b id="my_name-1"><%= user.username %></b>
+		<p id="my_name"><b id="my_name-1"><%= i.username %></b>
 			<ul id="social">
 				<li>
 					<a href="https://www.linkedin.com/in/harshit-kumar-21060b165/" target="_blank"><img src="/images/linkedin-sign.png" title="linkedin"></a>
@@ -42,13 +42,16 @@
         <div id="contact-form-in-touch">
             <div id="form">
                 <form action="">
-                    <input id="input-name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" readonly>
-                    <input id="input-email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" readonly>
-                    <% if(locals.user.organization){ %>
-                        <input id="input-email" type="text" name="organization" placeholder="Your Organization" value="<%= user.organization %>" readonly>    
-                    <% } %>
+                    <input id="input-name" type="text" name="username" placeholder="Your name" value="<%= i.username %>" readonly>
+                    <input id="input-email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= i.email %>" readonly>
+                    <input id="input-email" type="text" name="organization" placeholder="Your Organization" value="<%= i.organization %>" readonly>    
                     
-                    <a class="sub-button" href="/user/profile/update-profile/<%= user.id%>"> Edit Profile </a>
+                    
+                    <% if(locals.user && locals.user.id == i.id){ %>
+                        <a class="sub-button" href="/user/profile/update-profile/<%= i.id%>"> Edit Profile </a>
+                    <% } %>
+
+                    
                 </form>
             </div>
         </div>

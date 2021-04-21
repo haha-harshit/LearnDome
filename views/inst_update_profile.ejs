@@ -38,31 +38,20 @@
     <section id="contact">
         <div id="contact-form-in-touch">
             <div id="form">
-                <form action="/user/stu-update-profile-ok/<%= user.id %>" method="POST">
+                <form action="/user/inst-update-profile-ok/<%= user.id %>" method="POST">
                     <input id="name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" required>
                     
                     <input id="email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" required>
-                    
-                    <input id="male" type="radio" name="gender" value="male">
-                    <label for="male">Male</label>
 
-                    <input id="female" type="radio" name="gender" value="female">
-                    <label for="female">Female</label>
+                    <input id="organization" type="text" name="organization" placeholder="Organization" value="<%= user.organization %>">
                     
-                    <input id="other" type="radio" name="gender" value="other">
-                    <label for="other">Other</label>
-
-                    <input id="address" type="text" name="address" placeholder="Address" value="<%= user.address %>">
+                    <label for="designation">Designation:</label>
+                    <input type="text" id="designation" name="designation" placeholder="Designation" value="<%= user.designation %>">
                     
-                    <label for="phone">Enter a phone number:</label>
-                    <input type="tel" id="phone" name="phoneNumber" placeholder="123-45-678" value="<%= user.phoneNumber %>">
-                    
-                    <label for="birthday">Birthday:</label>
-                    <input type="date" id="birthday" name="dob" value="<%= user.dob %>">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" placeholder="Department" value="<%= user.department %>">
 
-                    <input id="eduLevel" type="text" name="eduLevel" placeholder="Education Level" value="<%= user.eduLevel %>">
-                    <input id="des" type="text" name="description" placeholder="About You..." value="<%= user.description %>">
-
+                    <input id="expertise" type="text" name="expertise" placeholder="Specialized Field" value="<%= user.expertise %>">
 
                     <button type="submit">UPLOAD</button>
                 </form>
