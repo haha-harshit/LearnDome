@@ -78,25 +78,15 @@ module.exports.create_course = async function(req, res){
 // for deleting a course
 module.exports.delete_course = function(req, res){
     Course.findById(req.params.id, function(err, course){
-        console.log(course);
-        a = course;
+        console.log(course.id);
+    
         console.log('DELETION IN PROGRESS...');
-        // console.log(req.user.id);
-        // console.log(course.instructor);
+    
         if(course.instructor == req.user.id){
+            let instructorId = course.instructor
             course.remove();
             console.log("Course Removed!");
-            Instructor.findById(req.user._id, function(err, inst){
-                console.log(a);
-                console.log(req.params.id);
-                inst.courses.remove(req.params.id);
-
-                // inst.update(
-                //     {},
-                //     { $pull: {courses: { $in: [req.params.id]}}},
-                //     { multi: true }
-                // )
-
+            Instructor.findByIdAndUpdate(instructorId, { $pull: {courses: req.params.id}}, function(err, inst){
                 console.log('Course deleted successfully!');
                 return res.redirect('back');
             })

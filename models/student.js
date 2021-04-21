@@ -20,7 +20,6 @@ const studentSchema = new mongoose.Schema({
 
     gender: {
         type: Boolean,
-        allowedValues: ['Male', 'Female'],
         optional: true
     },
 

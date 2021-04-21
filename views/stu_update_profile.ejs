@@ -1,0 +1,76 @@
+
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/profile.css">
+
+
+<div id="content-2">
+
+    <p style="  float: right;">
+    <a href="/" style="position: fixed;">Back</a>
+    </p>
+    
+    <div>
+		<p id="my_name"><b id="my_name-1"><%= user.username %></b>
+			<ul id="social">
+				<li>
+					<a href="https://www.linkedin.com/in/harshit-kumar-21060b165/" target="_blank"><img src="/images/linkedin-sign.png" title="linkedin"></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/harshit.gera.106" target="_blank"><img src="/images/facebook-logo.png" title="facebook"></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Harshit16579101" target="_blank"><img src="/images/twitter-sign.png" title="twitter"></a>
+				</li>
+				<li>
+					<a href="https://www.hackerrank.com/geraharshitkumar" target="_blank"><img src="/images/instagram.png" title="instagram"></a>
+				</li>
+			</ul>
+		</p>
+    </div>
+	
+
+    <section id="about" style="margin-top: 150px; background-color: white;">
+        <div>
+            <img id="my_image" src="/images/undraw_profile_pic_ic5t.svg" style="scale: 0.7;" alt="profile" title="profile">
+        </div>
+    </section>
+
+    <section id="contact">
+        <div id="contact-form-in-touch">
+            <div id="form">
+                <form action="">
+                    <input id="name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" required>
+                    <br>
+                    <input id="email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" required>
+                    <br>
+                    <input id="male" type="radio" name="gender" value="male">
+                    <label for="male">Male</label><br>
+
+                    <input id="female" type="radio" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    
+                    <input id="other" type="radio" name="gender" value="other">
+                    <label for="other">Other</label><br>
+
+                    <input id="address" type="text" name="address" placeholder="Address" value="<%= user.address %>"><br>
+                    
+                    <label for="phone">Enter a phone number:</label><br>
+                    <input type="tel" id="phone" name="phoneNumber" placeholder="123-45-678"  required><br>
+                    
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="dob"><br>
+
+                    <input id="eduLevel" type="text" name="eduLevel" placeholder="Education Level" value="<%= user.eduLevel %>">
+                    <input id="des" type="text" name="description" placeholder="About You..." value="<%= user.description %>">
+
+
+                    <input type="submit" value="UPDATE">
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+</div>
+
+</form>
