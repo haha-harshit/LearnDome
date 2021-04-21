@@ -238,7 +238,7 @@ module.exports.create_session_student = function(req, res){
     return res.redirect('homepage');
 }
 module.exports.create_session_instructor = function(req, res){
-    // req.flash('success', 'Logged in successfully!');
+    req.flash('success', 'Logged in successfully!');
     return res.redirect('homepage');
 }
 
@@ -246,7 +246,7 @@ module.exports.create_session_instructor = function(req, res){
 module.exports.destroy_session = function(req, res){
     // function given by passport
 
-    // req.flash('success', 'Logged Out Successfully!')
+    req.flash('success', 'Logged Out Successfully!')
     req.logout();
     
     return res.redirect('/');
