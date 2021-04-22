@@ -7,7 +7,8 @@
     <title>
         <%= title %>
     </title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="/css/homepage.css"> -->
     <link rel="stylesheet" href="/css/layout.css">
@@ -71,14 +72,6 @@
     <main>
 		<div class="content">
 
-			<% if(flash.success && flash.success.length > 0){ %>
-       
-				<h5>
-					<%= flash.success %>
-				</h5>
-		
-			<% } %>
-
             <!-- Layout is just a wrapper -->
             <!-- predefined keyword for variables that will be filled-in here -->
             <%- body %>
@@ -90,6 +83,33 @@
 
     <!-- extracting scripts from subpages into the layout -->
     <%- script %>
+
+	<script>
+		<% if(flash.success && flash.success.length > 0){ %>
+       
+			new Noty({
+				theme: 'relax',
+				text: '<%= flash.success %>',
+				type: 'success',
+				layout: 'topRight',
+				timeout: 1500
+			}).show();
+
+   		<% } %>
+
+		<% if(flash.error && flash.error.length > 0){ %>
+			
+			new Noty({
+				type: 'error',
+				layout: 'topRight',
+				theme: 'relax',
+				text: '<%= flash.error %>',
+				timeout: 1500,
+				date: Date.now()
+			}).show();
+
+		<% } %>
+	</script>
 
 
 </body>

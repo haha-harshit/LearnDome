@@ -39,11 +39,12 @@ module.exports.create_course = async function(req, res){
 
             course_inst.courses.push(course);
             course_inst.save();
-            console.log('course id added');
+            req.flash('success', 'Course Uploaded Successfully!')
             return res.redirect('back');
         }
     }catch(err){
-        return
+        req.flash('error', 'Error in Uploading Course!')
+        return res.redirect('back');
     }
 };
 
@@ -87,11 +88,11 @@ module.exports.delete_course = function(req, res){
             course.remove();
             console.log("Course Removed!");
             Instructor.findByIdAndUpdate(instructorId, { $pull: {courses: req.params.id}}, function(err, inst){
-                console.log('Course deleted successfully!');
+                req.flash('success', 'Course Deleted!')
                 return res.redirect('back');
             })
         }else{
-            console.log("Removal Failed!");
+            req.flash('success', "Couldn't Delete!");
             return res.redirect('back');
         }
     })
@@ -169,6 +170,7 @@ module.exports.course_enroll = function(req, res){
                 enrolling_student.save();
                 course.students.push(req.user);
                 course.save();
+                // req.flash('success', 'Successfully Enrolled!');
                 console.log('Successfully Enrolled!');
                 console.log("Student added in Courses's student field");
             }else{
@@ -176,10 +178,12 @@ module.exports.course_enroll = function(req, res){
                 enrolling_student.save();
                 course.students.push(req.user);
                 course.save();
+                // req.flash('success', 'Successfully Enrolled!');
                 console.log('Successfully Enrolled!');
                 console.log("Student added in Courses's student field");
             }
         });
-        return res.redirect('back');
     });
+    req.flash('success', 'Successfully Enrolled!');
+    return res.redirect('back');
 };

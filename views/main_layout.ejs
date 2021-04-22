@@ -7,7 +7,8 @@
     <title>
         <%= title %>
     </title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <!-- <link rel="stylesheet" href="/css/layout.css"> -->
     <!-- extracting styles from subpages into layout -->
     <%- style %>
@@ -15,14 +16,6 @@
 </head>
 <body>
 
-    <% if(flash.success && flash.success.length > 0){ %>
-       
-        <h5>
-            <%= flash.success %>
-        </h5>
-
-    <% } %>
-    
 
     <!-- Layout is just a wrapper -->
     <!-- predefined keyword for variables that will be filled-in here -->
@@ -33,6 +26,62 @@
 
     <!-- extracting scripts from subpages into the layout -->
     <%- script %>
+
+    <script>
+		<% if(flash.success && flash.success.length > 0){ %>
+       
+			new Noty({
+				theme: 'relax',
+				text: '<%= flash.success %>',
+				type: 'success',
+				layout: 'topRight',
+				timeout: 1500
+			}).show();
+
+   		<% } %>
+
+        <% if(flash.error && flash.error.length > 0){ %>
+
+            new Noty({
+                type: 'error',
+                layout: 'topRight',
+                theme: 'relax',
+                text: '<%= flash.error %>',
+                timeout: 1500,
+                date: Date.now()
+            }).show();
+
+        <% } %>
+
+        <% if(flash.warning && flash.warning.length > 0){ %>
+
+            new Noty({
+                type: 'warning',
+                layout: 'topRight',
+                theme: 'metroui',
+                text: '<%= flash.warning %>',
+                timeout: 1500,
+                date: Date.now()
+            }).show();
+
+        <% } %>
+
+
+        <% if(flash.information && flash.information.length > 0){ %>
+
+            new Noty({
+                type: 'information',
+                layout: 'topRight',
+                theme: 'mint',
+                text: '<%= flash.information %>',
+                timeout: 1500,
+                date: Date.now()
+            }).show();
+
+        <% } %>
+
+
+	</script>
 
 
 </body>

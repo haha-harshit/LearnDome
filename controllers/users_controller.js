@@ -139,9 +139,11 @@ module.exports.inst_update_profile = function(req, res){
 module.exports.inst_update_profile_ok = function(req, res){
     if(req.user.id == req.params.id){
         Instructor.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
+            req.flash('success', 'Profile Updated!');
             return res.redirect('back');
         });
     }else{
+        req.flash('error', "Couldn't perform this action");
         return res.staus(401).send('UNAUTHORIZED REQUEST!');
     };
 };
@@ -149,10 +151,12 @@ module.exports.inst_update_profile_ok = function(req, res){
 // updating-student
 module.exports.stu_update_profile_ok = function(req, res){
     if(req.user.id == req.params.id){
-        Student.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
+        Student.findByIdAndUpdate(req.params.id, req.body, function(err, stu){
+            req.flash('success', 'Profile Updated!');
             return res.redirect('back');
         });
     }else{
+        req.flash('error', "Couldn't perform this action");
         return res.staus(401).send('UNAUTHORIZED REQUEST!');
     };
 };

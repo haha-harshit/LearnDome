@@ -69,6 +69,8 @@ module.exports.log_in_instructor = function(req, res){
 module.exports.create_stu_account = function(req, res){
     // matching the password and consfirm password fields
     if(req.body.password != req.body.confirm_password){
+        req.flash('error', "Confirmed Password didn't match initial Password!");
+        // req.flash('success', 'Student Account Successfully Created!');
         console.error("confirm password did not match your initial password!");
         return res.redirect('back');
     }
@@ -83,10 +85,13 @@ module.exports.create_stu_account = function(req, res){
 
         // for user's email successfully found in database---->> ALREADY TAKEN!
         if(user){
+            req.flash('error', 'E-Mail already Registered!');
+        // return res.redirect('back');
             console.log("E-mail already registered!");
-            return res.render('_alreadyPresent', {
-                title: 'LearnDome | Notice'
-            });
+            // return res.render('_alreadyPresent', {
+            //     title: 'LearnDome | Notice'
+            // });
+            return res.redirect('back');
         }
 
         if(!user){
@@ -101,6 +106,7 @@ module.exports.create_stu_account = function(req, res){
 
                 // for USERNAME successfully found in Database---->> ALREADY TAKEN!
                 if(username){
+                    req.flash('error', 'Username Already Taken!');
                     console.log("USERNAME already taken!");
                     return res.redirect('back');
                 }
@@ -108,74 +114,31 @@ module.exports.create_stu_account = function(req, res){
                 if(!username){
                     Student.create(req.body, function(err, user){
                         if(err){
+                            req.flash('error', err);
                             console.log('Error in creating the Account!');
                             console.log(err);
                             return;
                         }
+                        req.flash('success', 'Student Account Successfully Created!');
+                        // req.flash('success', 'Successfully Enrolled!');
                         console.log('Account created successfully!', user)
                         return res.redirect('log-in-student');
                     })      
                 }
             })
         }else{
+            req.flash('error', 'Error in creating account');
             return res.redirect('back');
         }
-    })    
-
-    // User.findOne({email: req.body.email}, function(err, user){
-    //     // for any technical error!
-    //     if(err){
-    //         console.log(err);
-    //         return;
-    //     }
-
-    //     // for user's email successfully found in database---->> ALREADY TAKEN!
-    //     if(user){
-    //         console.log("E-mail already registered!");
-    //         return res.render('_alreadyPresent', {
-    //             title: 'LearnDome | Notice'
-    //         });
-    //     }
-
-    //     if(!user){
-            
-    //         // search for user's USERNAME if ALREADY TAKEN or not!
-    //         User.findOne({username: req.body.username}, function(err, username){
-    //             // technical error
-    //             if(err){
-    //                 console.log(err);
-    //                 return;
-    //             }
-
-    //             // for USERNAME successfully found in Database---->> ALREADY TAKEN!
-    //             if(username){
-    //                 console.log("USERNAME already taken!");
-    //                 return res.redirect('back');
-    //             }
-
-    //             if(!username){
-    //                 User.create(req.body, function(err, user){
-    //                     if(err){
-    //                         console.log('Error in creating the Account!');
-    //                         console.log(err);
-    //                         return;
-    //                     }
-    //                     console.log('Account created successfully!', user)
-    //                     return res.redirect('log-in');
-    //                 })      
-    //             }
-    //         })
-    //     }else{
-    //         return res.redirect('back');
-    //     }
-    // })
-}
+    })
+};    
 
 
 // get the sign-up data for INSTRUCTOR
 module.exports.create_inst_account = function(req, res){
     // matching the password and consfirm password fields
     if(req.body.password != req.body.confirm_password){
+        req.flash('error', "Confirmed Password didn't match initial Password!");
         console.error("confirm password did not match your initial password!");
         return res.redirect('back');
     }
@@ -190,6 +153,7 @@ module.exports.create_inst_account = function(req, res){
 
         // for user's email successfully found in database---->> ALREADY TAKEN!
         if(user){
+            req.flash('error', 'E-Mail already Registered!');
             console.log("E-mail already registered!");
             return res.render('_alreadyPresent', {
                 title: 'LearnDome | Notice'
@@ -208,6 +172,7 @@ module.exports.create_inst_account = function(req, res){
 
                 // for USERNAME successfully found in Database---->> ALREADY TAKEN!
                 if(username){
+                    req.flash('error', 'Username Already Taken!');
                     console.log("USERNAME already taken!");
                     return res.redirect('back');
                 }
@@ -215,16 +180,19 @@ module.exports.create_inst_account = function(req, res){
                 if(!username){
                     Instructor.create(req.body, function(err, user){
                         if(err){
+                            req.flash('error', err);
                             console.log('Error in creating the Account!');
                             console.log(err);
                             return;
                         }
+                        req.flash('success', 'Instructor Account Successfully Created!');
                         console.log('Account created successfully!', user)
                         return res.redirect('log-in-instructor');
                     })      
                 }
             })
         }else{
+            req.flash('error', 'Error in creating account');
             return res.redirect('back');
         }
     })
@@ -234,11 +202,12 @@ module.exports.create_inst_account = function(req, res){
 
 // get the sign-in data
 module.exports.create_session_student = function(req, res){
-    req.flash('success', 'Logged in successfully!');
+    req.flash('success', 'Logged in successfully! 👀');
     return res.redirect('homepage');
 }
 module.exports.create_session_instructor = function(req, res){
-    req.flash('success', 'Logged in successfully!');
+    req.flash('success', 'Logged in successfully! 👀');
+    
     return res.redirect('homepage');
 }
 
@@ -246,7 +215,7 @@ module.exports.create_session_instructor = function(req, res){
 module.exports.destroy_session = function(req, res){
     // function given by passport
     req.logout();
-    req.flash('success', 'Logged Out Successfully!')
+    req.flash('success', 'Logged Out Successfully! 👀')
     
     return res.redirect('/');
 }

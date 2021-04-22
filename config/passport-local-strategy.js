@@ -8,18 +8,19 @@ const Instructor = require('../models/instructor');
 
 // authenticating STUDENT using passport
 passport.use('student-local' ,new LocalStrategy({
-        usernameField: 'email'
+        usernameField: 'email',
+        passReqToCallback: true
     }, 
-    function(email, password, done){
+    function(req, email, password, done){
         // find a user and establish the identity
         Student.findOne({email: email}, function(err, student){
             if(err){
-                console.log('Error in finding the user-->Passport');
+                req.flash('error', err);
                 return done(err);
             }
             else if(!student || student.password != password){
-                // console.log('Invalid Username/Password');
-                console.log('Not a student id!');
+                req.flash('error', 'Invalid Username/Password');
+                // console.log('Not a student id!');
                 return done(null, false);
             }
             else{
@@ -32,17 +33,18 @@ passport.use('student-local' ,new LocalStrategy({
 
 // authentication INSTRUCTOR using passport
 passport.use('instructor-local' ,new LocalStrategy({
-        usernameField: 'email'
+        usernameField: 'email',
+        passReqToCallback: true
     }, 
-    function(email, password, done){
+    function(req, email, password, done){
         // find a user and establish the identity
         Instructor.findOne({email: email}, function(err, instructor){
             if(err){
-                console.log('Error in finding the user-->Passport');
+                req.flash('error', err);
                 return done(err);
             }
             else if(!instructor || instructor.password != password){
-                console.log('Invalid Username/Password');
+                req.flash('error', 'Invalid Username/Password');
                 return done(null, false);
             }
             else{
@@ -134,7 +136,8 @@ passport.checkAuthentication = function(req, res, next){
     }
 
     // if user is not signed in
-    return res.redirect('/log-in-student');
+    req.flash('information', 'You are not Logged In!');
+    return res.redirect('back');
 }
 
 passport.setAuthenticatedUser = function(req, res, next){
