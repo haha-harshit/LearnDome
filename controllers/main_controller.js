@@ -245,9 +245,8 @@ module.exports.create_session_instructor = function(req, res){
 // logging-out
 module.exports.destroy_session = function(req, res){
     // function given by passport
-
-    req.flash('success', 'Logged Out Successfully!')
     req.logout();
+    req.flash('success', 'Logged Out Successfully!')
     
     return res.redirect('/');
 }

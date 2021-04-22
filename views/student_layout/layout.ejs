@@ -18,6 +18,7 @@
 </head>
 <body>
 
+	
     <input type="checkbox" id="check">
 	<!--Header start-->
 	<header>
@@ -44,6 +45,7 @@
 		</div>
 	</header>
 	<!--header end-->
+	
 
 	<div id="sidebar-out">
 		<!--sidebar start-->
@@ -69,6 +71,17 @@
     
     <main>
 		<div class="content">
+
+
+			<% if(flash.success && flash.success.length > 0){ %>
+       
+				<h5>
+					<%= flash.success %>
+				</h5>
+		
+			<% } %>
+
+
             <!-- Layout is just a wrapper -->
             <!-- predefined keyword for variables that will be filled-in here -->
             <%- body %>
