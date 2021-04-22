@@ -62,35 +62,36 @@ const { profile } = require('../../codeial/controllers/users_controllers');
 
 
 // instructor's uploaded courses
-module.exports.uploadedCourses = function(req, res){
-    Instructor.findById(req.user._id)
-    .populate('courses')
-    .exec(function(err, ucourses){
+module.exports.uploadedCourses = async function(req, res){
+    try{
+        let ucourses = await Instructor.findById(req.user._id).populate('courses');
         return res.render('i_mydome', {
             title: 'LearnDome | Dashboard',
             uc: ucourses,
             layout: '../views/admin_layout/layout'
         });
-    })
-};
-
+    }catch(err){
+        return res.redirect('back');
+    }
+}
 
 // student's enrolled courses
-module.exports.mydome = function(req, res){
-    Student.findById(req.user._id)
-    .populate('enrolledCourses')
-    .exec(function(err, myCourses){
+module.exports.mydome =async function(req, res){
+    try{
+        let myCourses = await Student.findById(req.user._id).populate('enrolledCourses')
+        
+        let instructor = await Instructor.find({})
 
-        Instructor.find({}, function(err, instructor){
-            return res.render('s_mydome', {
-                title: 'LearnDome | MyDome',
-                myCourse: myCourses,
-                all_inst: instructor,
-                layout: '../views/student_layout/layout'
-            });
-        })
-    });
-}
+        return res.render('s_mydome', {
+            title: 'LearnDome | MyDome',
+            myCourse: myCourses,
+            all_inst: instructor,
+            layout: '../views/student_layout/layout'
+        });
+    }catch(err){
+        return res.redirect('back');
+    } 
+};
     
 // viewing self profile(for student)
 module.exports.s_profile = function(req, res){
