@@ -137,27 +137,97 @@ module.exports.inst_update_profile = function(req, res){
 }
 
 // updating-instructor
-module.exports.inst_update_profile_ok = function(req, res){
+// module.exports.inst_update_profile_ok = function(req, res){
+//     if(req.user.id == req.params.id){
+//         Instructor.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
+//             req.flash('success', 'Profile Updated!');
+//             return res.redirect('back');
+//         });
+//     }else{
+//         req.flash('error', "Couldn't perform this action");
+//         return res.staus(401).send('UNAUTHORIZED REQUEST!');
+//     };
+// };
+
+module.exports.inst_update_profile_ok = async function(req, res){
     if(req.user.id == req.params.id){
-        Instructor.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
-            req.flash('success', 'Profile Updated!');
+        try{
+            let inst = await Instructor.findById(req.params.id);
+            Instructor.uploadedAvatar(req, res, function(err){
+                if(err){
+                    console.log('***Multer Error', err);
+                }
+                inst.username = req.body.username,
+                inst.email = req.body.email,
+                inst.organization = req.body.organization,
+                inst.designation = req.body.designation,
+                inst.department = req.body.department,
+                inst.expertise = req.body.expertise
+
+                if(req.file){
+                    inst.avatar = Instructor.avatarPath + '/' + req.file.filename
+                }
+                inst.save();
+                req.flash('success', 'Profile Updated!');
+                return res.redirect('back');
+            });    
+        }catch(err){
+            req.flash('error', err);
             return res.redirect('back');
-        });
+        }
     }else{
         req.flash('error', "Couldn't perform this action");
         return res.staus(401).send('UNAUTHORIZED REQUEST!');
     };
 };
 
+
+
 // updating-student
-module.exports.stu_update_profile_ok = function(req, res){
+// module.exports.stu_update_profile_ok = function(req, res){
+//     if(req.user.id == req.params.id){
+//         Student.findByIdAndUpdate(req.params.id, req.body, function(err, stu){
+//             req.flash('success', 'Profile Updated!');
+//             return res.redirect('back');
+//         });
+//     }else{
+//         req.flash('error', "Couldn't perform this action");
+//         return res.staus(401).send('UNAUTHORIZED REQUEST!');
+//     };
+// };
+
+
+module.exports.stu_update_profile_ok = async function(req, res){
     if(req.user.id == req.params.id){
-        Student.findByIdAndUpdate(req.params.id, req.body, function(err, stu){
-            req.flash('success', 'Profile Updated!');
+        try{
+            let stu = await Student.findById(req.params.id);
+            Student.uploadedAvatar(req, res, function(err){
+                if(err){
+                    console.log('***Multer Error', err);
+                }
+                stu.username = req.body.username,
+                stu.email = req.body.email,
+                stu.address = req.body.address,
+                stu.phoneNumber = req.body.phoneNumber,
+                stu.dob = req.body.dob,
+                stu.eduLevel = req.body.eduLevel,
+                stu.description = req.body.description
+
+                if(req.file){
+                    stu.avatar = Student.avatarPath + '/' + req.file.filename
+                }
+                stu.save();
+                req.flash('success', 'Profile Updated!');
+                return res.redirect('back');
+            });    
+        }catch(err){
+            req.flash('error', err);
             return res.redirect('back');
-        });
+        }
     }else{
         req.flash('error', "Couldn't perform this action");
         return res.staus(401).send('UNAUTHORIZED REQUEST!');
     };
 };
+
+

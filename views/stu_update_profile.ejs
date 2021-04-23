@@ -38,7 +38,10 @@
     <section id="contact">
         <div id="contact-form-in-touch">
             <div id="form">
-                <form action="/user/stu-update-profile-ok/<%= user.id %>" method="POST">
+                <form action="/user/stu-update-profile-ok/<%= user.id %>" method="POST" enctype="multipart/form-data" >
+
+                    <input id="avatar" type="file" name="avatar" placeholder="Profile Picture">
+
                     <input id="name" type="text" name="username" placeholder="Your name" value="<%= user.username %>" required>
                     
                     <input id="email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" required>
