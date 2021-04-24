@@ -4,6 +4,9 @@ const Student = require('../models/student');
 const Instructor = require('../models/instructor');
 const { profile } = require('../../codeial/controllers/users_controllers');
 
+const fs = require('fs');
+const path = require('path');
+
 
 // module.exports.mydome = function(req, res){
 //     Course.find({})
@@ -163,9 +166,16 @@ module.exports.inst_update_profile_ok = async function(req, res){
                 inst.designation = req.body.designation,
                 inst.department = req.body.department,
                 inst.expertise = req.body.expertise
+                // inst.body = req.body
 
                 if(req.file){
-                    inst.avatar = Instructor.avatarPath + '/' + req.file.filename
+
+                    if(inst.avatar){
+                        fs.unlinkSync(path.join(__dirname, '..', inst.avatar));
+                    }
+
+                    inst.avatar = Instructor.avatarPath + '/' + req.file.filename;
+                    
                 }
                 inst.save();
                 req.flash('success', 'Profile Updated!');
@@ -214,6 +224,11 @@ module.exports.stu_update_profile_ok = async function(req, res){
                 stu.description = req.body.description
 
                 if(req.file){
+
+                    if(stu.avatar){
+                        fs.unlinkSync(path.join(__dirname, '..', stu.avatar));
+                    }
+
                     stu.avatar = Student.avatarPath + '/' + req.file.filename
                 }
                 stu.save();

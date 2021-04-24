@@ -31,7 +31,7 @@
 
     <section id="about" style="margin-top: 150px; background-color: white;">
         <div>
-            <img id="my_image" src="/images/undraw_profile_pic_ic5t.svg" style="scale: 0.7;" alt="profile" title="profile">
+            <img id="my_image" src="<%= user.avatar %>" style="scale: 0.7;" alt="<%= user.username%>" title="profile">
         </div>
     </section>
 
@@ -46,7 +46,7 @@
                     
                     <input id="email" type="e-mail" name="email" placeholder="Your E-mail" value="<%= user.email %>" required>
 
-                    <input id="organization" type="text" name="organization" placeholder="Organization" value="<%= user.organization %>">
+                    <input id="organization" type="text" name="organization" placeholder="Organization" value="<%= user.organization %>" required>
                     
                     <label for="designation">Designation:</label>
                     <input type="text" id="designation" name="designation" placeholder="Designation" value="<%= user.designation %>">
