@@ -7,7 +7,7 @@ const Instructor = require('../models/instructor');
 const Student = require('../models/student');
 
 let opts = {
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey: 'LearnDome'
 }
 
