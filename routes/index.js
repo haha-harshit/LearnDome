@@ -6,7 +6,7 @@ const passport = require('passport');
 
 const mainController = require('../controllers/main_controller');
 // const homeController = require('../controllers/home_controller');
-
+ 
 
 // before log-in
 router.get('/', mainController.main);
@@ -31,6 +31,22 @@ router.post('/create-session-instructor', passport.authenticate(
     'instructor-local',
     {failureRedirect: '/log-in-instructor'}
 ), mainController.create_session_instructor);
+
+
+// login/signup using google
+
+// instructor using google
+router.get('/auth-i/google', passport.authenticate('instructor-google', {scope: ['profile', 'email']}));
+router.get('/i-callback', passport.authenticate('instructor-google', 
+    {failureRedirect: '/log-in-instructor'}
+), mainController.create_session_instructor);
+
+
+// student using google
+router.get('/auth-s/google', passport.authenticate('student-google', {scope: ['profile', 'email']}));
+router.get('/s-callback', passport.authenticate('student-google',
+    {failureRedirect: '/log-in-student'}
+), mainController.create_session_student)
 
 
 // destroying session(logging out)

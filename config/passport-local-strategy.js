@@ -33,7 +33,7 @@ passport.use('student-local' ,new LocalStrategy({
 
 // authentication INSTRUCTOR using passport
 passport.use('instructor-local' ,new LocalStrategy({
-        usernameField: 'email',
+        usernameField: 'email', 
         passReqToCallback: true
     }, 
     function(req, email, password, done){

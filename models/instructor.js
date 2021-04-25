@@ -23,8 +23,7 @@ const instructorSchema = new mongoose.Schema({
     },
 
     organization: {
-        type: String,
-        required: true
+        type: String
     },
 
     designation: {
