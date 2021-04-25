@@ -68,7 +68,6 @@ passport.use('student-google', new googleStrategy({
 
             // if instructor found set this as req.user
             if(student){
-
                 console.log('Login successfull through google!');
                 return done(null, student);
 
