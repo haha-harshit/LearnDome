@@ -2,6 +2,8 @@ const Course = require('../models/course');
 const Instructor = require('../models/instructor');
 const Student = require('../models/student');
 
+const enrollmentMailer = require('../mailers/enrollment_mailer');
+
 // for creating a course
 // module.exports.create_course = function(req, res){
 //     Course.create({
@@ -211,6 +213,11 @@ module.exports.course_enroll = async function(req, res){
             course.students.push(req.user);
             course.save();
             // req.flash('success', 'Successfully Enrolled!');
+
+            // course = await course.populate('stuednts')
+
+            enrollmentMailer.newEnrollment(enrolling_student);
+
             console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field");
         }else{
@@ -218,6 +225,11 @@ module.exports.course_enroll = async function(req, res){
             enrolling_student.save();
             course.students.push(req.user);
             course.save();
+
+            // course = await course.populate('students email').execPopulate();
+
+            enrollmentMailer.newEnrollment(enrolling_student);
+
             // req.flash('success', 'Successfully Enrolled!');
             console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field");
