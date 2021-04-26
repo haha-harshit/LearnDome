@@ -69,5 +69,18 @@
                 </article>
             </div>
         </div>
+
+        <div id="stu-in-course" style="display: block; background-color:cadetblue; padding: 20px; border-radius: 5px;">
+            <h2>Students Enrolled in this Course</h2>
+                <% for(x of c.students){ %>
+                    <ul>
+                        <li id="<%=x.id%>">
+                            <a href=""><%= x.username %></a>
+                        </li>
+                    </ul>
+                <% } %>
+        </div>
+
+
     </div>
 

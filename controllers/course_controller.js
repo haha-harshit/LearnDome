@@ -131,7 +131,7 @@ module.exports.delete_course = async function(req, res){
 // STUDENT COURSE-MODAL with ASYNC/AWAIT
 module.exports.course_modal = async function(req, res){
     try{
-        let courses = await Course.findById(req.params.id).populate('instructor');
+        let courses = await Course.findById(req.params.id).populate('instructor').populate('students');
         return res.render('course_modal',{
             title: 'LearnDome',
             c: courses,
