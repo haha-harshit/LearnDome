@@ -215,8 +215,8 @@ module.exports.course_enroll = async function(req, res){
             // req.flash('success', 'Successfully Enrolled!');
 
             // course = await course.populate('stuednts')
-
             enrollmentMailer.newEnrollment(enrolling_student);
+            // enrollmentMailer.newEnrollment(course);
 
             console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field");
@@ -227,8 +227,8 @@ module.exports.course_enroll = async function(req, res){
             course.save();
 
             // course = await course.populate('students email').execPopulate();
-
             enrollmentMailer.newEnrollment(enrolling_student);
+            // enrollmentMailer.newEnrollment(course);
 
             // req.flash('success', 'Successfully Enrolled!');
             console.log('Successfully Enrolled!');
