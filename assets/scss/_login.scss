@@ -1,0 +1,233 @@
+html{
+    height: 100%;
+    background-color: rgb(79, 57, 131);
+}
+body{
+    margin: 0;
+}
+/* outer main div */
+#outer{
+    padding: 17px;
+    background-color: #ebe1f5;
+    margin: auto;
+    margin-top: 100px;
+    height: 427px;
+    width: 450px;
+    border-radius: 5px;
+    /* border: 0.5px solid blueviolet; */
+    box-shadow: 1px 5px 20px -5px;
+    /* box-shadow: solid black 2px; */
+}
+
+/* close window */
+#close{
+    float: right;
+}
+.fa-times-circle{
+    scale: 1.3;
+    overflow: hidden;
+    transition-property: transform;
+    transition-duration: 0.8s;
+    color:cadetblue;
+}
+.fa-times-circle:hover{
+    transform: rotate(180deg);
+    /* -webkit-transform: rotate(360deg); */
+}
+
+                                                        /* inner main div */
+#content{
+    padding: 30px;
+}
+/* sign-in heading */
+#heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: -0.5;
+    margin-top: -30px;
+    color: #271a1a;
+    font-size: 32px;
+}
+
+/* social-sign-in */
+#social{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.s-fb-g{
+    box-shadow: 0px 0px 10px -5px black;
+    border-radius: 20px;
+    height: 35px;
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    font-size: 15px;
+    /* padding: 7px 40px; */
+    flex-grow: 0;
+}
+.s-fb-g:hover{
+    box-shadow: none;
+}
+
+/* for fb! */
+.fb{
+    /* padding-top: 5px; */
+    background-color: #3b5998;
+    transition: background-color 0.2s;
+    /* flex-grow: 0; */
+}
+.fb:hover{
+    background-color: #31487a;
+    transition: background-color 0.2s;
+}
+
+/* for google */
+.g{
+    /* padding-top: 5px; */
+    background-color: #db4a39;
+    transition: background-color 0.2s;
+}
+.g:hover{
+    background-color: #a3362a;
+    transition: background-color 0.2s;
+}
+
+/* social logos */
+.s-logo, .s-logo a{
+    border: 2px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #ebe1f5;
+    width: 25%;
+    height: inherit;
+}
+.s-logo a{
+    border: 0;
+    width: 100%;
+}
+
+/* social texts */
+.s-text, .s-text a{
+    text-decoration: none;
+    color: aliceblue;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* horizontal divider */
+.divider-hr{
+    display: inline-block;
+    margin-top: -12px;
+    background-color: gray;
+    height: 1px;
+    width: 100%;
+    position: relative;
+}
+.divider-hr{
+    display: inline-block;
+    text-align: center;
+}
+.divider-hr span{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    position: relative;
+    margin-top: -17px;
+    padding: 5px 8px;
+    background-color: #ebe1f5;
+}
+
+
+                                                    /* login-form */
+#login-form{
+    margin-top: 0px;
+}
+
+/* for inputs */
+#login-form input{
+    color: rgb(30, 82, 83);
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    letter-spacing: 1;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    text-indent: 10px;
+    border: 2px solid rgba(59, 119, 53, 0.705);
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+#login-form input:hover{
+    background-color: rgb(233, 232, 232);
+    transition: background-color 0.2s;
+}
+
+/* login-button */
+#login-form button{
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    color: aliceblue;
+    border: none;
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    background-color: #210934;
+    transition: background-color 0.1s;
+    border: 1px solid black;
+    border-radius: 2px ;
+    letter-spacing: 1;
+}
+#login-form button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: #acacac;
+    transition: background-color 0.1s;
+}
+
+/* forgot password */
+#forgot-pass{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+    text-align: right;
+    /* letter-spacing: -0.5; */
+    text-decoration: none;
+}
+
+
+                                                        /* SIGN UP FORM */
+#sign-up-head{
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: -0.5;
+}
+#sign-up-form{
+    float: right;
+}
+/* SIGN-UP BUTTON */
+#sign-up-form button{
+    height: 35px;
+    width: 150px;
+    margin-top: -5px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    color: aliceblue;
+    border: none;
+    background-color: #210934;
+    transition: background-color 0.1s;
+    border: 1px solid black;
+    border-radius: 2px ;
+    letter-spacing: 1;
+}
+#sign-up-form button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: #acacac;
+    transition: background-color 0.1s;
+}

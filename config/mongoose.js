@@ -1,7 +1,10 @@
+
 const mongoose = require('mongoose');
 
+const env = require('./environment');
+
 // connecting DB 
-mongoose.connect('mongodb://localhost/LearnDome_development', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb://localhost/${env.db}`, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);

@@ -1,0 +1,1 @@
+const inputs=document.querySelectorAll(".input");function addcl(){this.parentNode.parentNode.classList.add("focus")}function remcl(){let e=this.parentNode.parentNode;""==this.value&&e.classList.remove("focus")}inputs.forEach(e=>{e.addEventListener("focus",addcl),e.addEventListener("blur",remcl)});

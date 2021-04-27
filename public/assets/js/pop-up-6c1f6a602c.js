@@ -1,0 +1,1 @@
+function openLoginForm(){document.getElementById("login-popup").style.display="block"}function closeLoginForm(){document.getElementById("login-popup").style.display="none"}function openSignupForm(){document.getElementById("signup-popup").style.display="block"}function closeSignupForm(){document.getElementById("signup-popup").style.display="none"}

@@ -1,0 +1,1 @@
+function open_l_Nav(){document.getElementById("myNav").style.width="100%"}function close_l_Nav(){document.getElementById("myNav").style.width="0%"}function open_s_Nav(){document.getElementById("my_s_Nav").style.width="100%"}function close_s_Nav(){document.getElementById("my_s_Nav").style.width="0%"}

@@ -1,0 +1,139 @@
+body{
+	margin: 0px;
+	/* user-select: none; */
+}
+
+
+#my_name{
+	text-align: center;
+	color: black;
+	/* padding-top: 45px; */
+	font-size: 35px;
+	letter-spacing: 1.5px;
+	font-family: sans-serif;
+	user-select: none;
+}
+#social li{
+	display: inline-block;
+}
+#social{
+	list-style: none;
+	text-align: center;
+	padding-left: 0px;
+	margin-top: -10px;
+}
+#social li img{
+	height: 25px;
+	width: 25px;
+	user-select: none;
+}
+#social li a{
+    margin-left: 20px;
+	text-decoration: none;
+	display: inline-block;
+	/* width: 45px; */
+}
+
+/*ABOUT SECTION*/
+#about{
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+#my_image{
+	height: 12rem;
+	width: 12rem;
+	position: relative;
+}
+#about img{
+	border-radius: 50%;
+	margin-top: -130px;
+	box-shadow: 0px 0px 10px black;
+	user-select: none;
+	transition: 0.3s ease-in-out;
+}
+#about img:hover{
+	box-shadow: 0px 0px 10px red;
+	transition: box-shadow 0.5s, transform 1s;
+	transform: scale(1.025);
+}
+#about p{
+	margin-top: 70px;
+	margin-left: 200px;
+	margin-right: 200px;
+	letter-spacing: 0.1px;
+	line-height: 27px;
+	font-size: 18px;
+	text-align: justify;
+	text-justify: auto;
+	user-select: none;
+	font-family: AmazonEmber,Helvetica Neue,Helvetica,Arial,sans-serif;
+	padding-bottom: 30px;
+}
+/* section{
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+} */
+
+
+/*SKILL SECTION*/
+
+
+
+/*EXPERIENCE*/
+/* CONTACT */
+
+
+#contact{
+	/* background: linear-gradient(60deg, #2857a4, #403066 75%); */
+    background: white;
+}
+
+/*contact-form*/
+form input,textarea{
+	color:#424c53;
+	background-color: inherit;
+	/* display: block; */
+	border: none;
+	border-bottom: 2px solid #F5F5F5;
+	/* line-height: 10px; */
+	font-size: 17px;
+	letter-spacing: 1.5px;
+	margin-bottom: 35px;
+	margin-top: 40px;
+	width: 100%;
+	font-family: cursive;
+}
+textarea{
+	line-height: 25px;
+}
+#contact-form-in-touch{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+button{
+	transition: 0.3s ease-in-out;
+	color:blueviolet;
+	background-color: inherit;
+	display: block;
+	border: 3px solid #F5F5F5;
+	border-radius: 5px;
+	line-height: 25px;
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 10px;
+	margin: auto;
+}
+button:hover{
+	transform: scale(1.05);
+	transition: transform 0.5s;
+	background-color: #F5F5F5;
+	color: black;
+}

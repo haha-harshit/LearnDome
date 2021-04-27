@@ -7,12 +7,16 @@ const crypto = require('crypto');
 const Instructor = require('../models/instructor');
 const Student = require('../models/student');
 
+// importing environment
+const env = require('./environment');
+
 
 // tell passport to use a new strategy for instructor login/signup
 passport.use('instructor-google', new googleStrategy({
-        clientID: "829064347152-1eoc8svt8e6fjgqpogitagvo3c0rf15v.apps.googleusercontent.com",
-        clientSecret: "JkUSTDqMT4WwMmH0MhQrmv5f",
-        callbackURL: "http://localhost:8000/i-callback",
+        clientID: env.google_client_id,
+        clientSecret: env.google_client_secret,
+        // only callback url is different
+        callbackURL: env.inst_google_callback_url
     },
     function(accessToken, refreshToken, profile, done){
 
@@ -53,9 +57,9 @@ passport.use('instructor-google', new googleStrategy({
 
 
 passport.use('student-google', new googleStrategy({
-        clientID: "829064347152-1eoc8svt8e6fjgqpogitagvo3c0rf15v.apps.googleusercontent.com",
-        clientSecret: "JkUSTDqMT4WwMmH0MhQrmv5f",
-        callbackURL: "http://localhost:8000/s-callback",
+        clientID: env.google_client_id,
+        clientSecret: env.google_client_secret,
+        callbackURL: env.stu_google_callback_url,
     },
     function(accessToken, refreshToken, profile, done){
         // find student 

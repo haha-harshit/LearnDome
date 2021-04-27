@@ -1,0 +1,234 @@
+@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+body{
+	margin:0px;
+	padding: 0px;
+	font-family: 'Poppins', sans-serif;
+}
+header{
+	position: fixed;
+	background: #22242A;
+	padding:20px;
+	width: 100%;
+	height: 50px;
+	top:0;
+	left: 0;
+	z-index: 1;
+}
+
+#header-div{
+	display: flex;
+	justify-content: space-between;
+	margin-left: 20px;
+	margin-right: 60px;
+}
+
+
+.left-area{
+	display: inline-block;
+}
+
+.left-area h3{
+	color: #fff;
+	margin: 0;
+	/* text-transform: ; */
+	font-size: 30px;
+	font-weight: 600;
+}
+.left-area span{
+	color: #aa09ea;
+}
+
+.right-area{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 160px;
+}
+
+.logout-btn{
+	padding: 8px 10px;
+	background: #aa09ea;
+	/* text-decoration: none; */
+	/* float: right; */
+	/* margin-top: -45px;
+	margin-right: 40px; */
+	border-radius: 4px;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 450;
+	transition: 0.1s;
+	transition-property: background;
+}
+.logout-btn:hover{
+	background-color: #aa09ea;
+	color:rgb(219, 219, 219);
+}
+
+#sidebar-out{
+	margin-top: 90px;
+	width: 250px;
+}
+
+.sidebar{
+	background: #2F323A;
+	/* margin-top: 50px; */
+	padding-top: 30px;
+	position: fixed;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	transition: 0.5s;
+	transition-property: left;
+}
+.sidebar .profile-image{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	margin-bottom: 10px;
+}
+.sidebar h4{
+	color: #ccc;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.sidebar a{
+	color: #fff;
+	display: block;
+	width: 100%;
+	line-height: 60px;
+	text-decoration: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	transition-property: background;
+}
+.sidebar a:hover{
+	background:#aa09ea;
+
+}
+.sidebar a:active{
+	background:#aa09ea;
+
+}
+
+.sidebar i{
+	padding-right: 10px;
+}
+label #sidebar-btn{
+	z-index: 1;
+	color: #fff;
+	cursor: pointer;
+	position: fixed;
+	left: 17%;
+	font-size: 20px;
+	margin: 0.7% 0%;
+	transition: 0.5s;
+	transition-property: color;
+} 
+label #sidebar-btn:hover{
+	color: #aa09ea;
+}
+#check:checked ~ .sidebar{
+	left: -190px;
+}
+#check:checked ~ .sidebar a span{
+	display: none;
+}
+#check:checked ~ .sidebar a{
+	font-size: 20px;
+	margin-left: 170px;
+	width: 80px;
+}
+.content{
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	margin-left: 250px;
+	/* margin-right: 0; */
+	height: 100vh;
+	transition: 0.5s;
+}
+#check:checked ~ .content{
+	margin-left: 60px;
+	
+}
+#check{
+	display: none;
+	background:white;
+}
+
+
+/* content-main */
+/* recommend section */
+/* #recommendations{
+	background-color:whitesmoke;
+}
+#recommendations-from-org-out{
+	padding: 30px 60px;
+} */
+/* .section-content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 30px;
+} */
+
+/* .song-out:hover > .dot-img{
+	margin-top: -20px;
+	margin-left: -20px;
+	display: block;
+	opacity: 0.2;
+	transform: scale(1.03);
+	transition: transform 0.2s display 0.20s opacity 0.20s margin-top 0.20s margin-left 0.20s;
+} */
+
+/* dot-img */
+/* .dot-img{
+	width: 80.05px;
+	height: 79.05px;
+	position: absolute;
+	margin-top: -15px;
+	rotate: 180deg;
+	margin-left: -15px;
+	
+	opacity: 0.00;
+	transition: 0.20s ease-in-out;
+	
+} */
+
+/* .song{
+	opacity: 0.9;
+	border-radius: 3px;
+	box-shadow: 0px 0px 10px -6px black;
+	
+	transition: 0.20s ease-in-out
+} */
+/* .song:hover{
+	opacity: 1;
+	box-shadow: 0px 5px 15px -6px black;
+	transition: box-shadow 0.20s ease-in-out;
+}
+
+.song-icon img{
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 150px;
+	width: 150px;
+}
+.song-description-1{
+	color: white;
+	text-decoration: none;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.song-description-2{
+	text-decoration: none;
+	padding-bottom: 10px;
+	font-size: 14px;
+	font-family: sans-serif;
+	color: lightgray;
+	margin-top: -10px;
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+} */

@@ -2,13 +2,15 @@
 const passport = require('passport');
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
+const env = require('./environment');
+
 
 const Instructor = require('../models/instructor');
 const Student = require('../models/student');
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'LearnDome'
+    secretOrKey: env.jwt_secret
 }
 
 passport.use('instructor-jwt', new JWTstrategy(opts, function(jwtPayLoad, done){
