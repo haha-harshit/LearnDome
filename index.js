@@ -10,7 +10,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 // const bodyParser = require('body-parser');
 const app = express();
-require('./config/view-helpers')(app);
+// require('./config/view-helpers')(app);
 // cookie-parser
 const cookieParser = require('cookie-parser');
 
@@ -36,15 +36,15 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 
 const sassMiddleware = require('node-sass-middleware');
-// if(env.name == 'development'){
-    app.use(sassMiddleware({
-        src: path.join(env.asset_path, 'scss'),
-        dest: path.join(env.asset_path, 'css'),
-        debug: true,
-        outputStyle: 'extended',
-        prefix: '/css'
-    }));
-// }
+
+app.use(sassMiddleware({
+    src: path.join(env.asset_path, 'scss'),
+    dest: path.join(env.asset_path, 'css'),
+    debug: true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}));
+
 
 
 const flash = require('connect-flash');

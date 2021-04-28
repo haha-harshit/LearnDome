@@ -43,7 +43,7 @@ const development = {
 
 const production = {
     name: 'production',
-    asset_path: process.env.LEARNDOME_ASSET_PATH,
+    asset_path: './assets',
     session_cookie_key: process.env.LD_SESSION_COOKIE_KEY,
     db: process.env.LD_DB,
     smtp: {
