@@ -36,7 +36,7 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 
 const sassMiddleware = require('node-sass-middleware');
-if(env.name == 'development'){
+// if(env.name == 'development'){
     app.use(sassMiddleware({
         src: path.join(env.asset_path, 'scss'),
         dest: path.join(env.asset_path, 'css'),
@@ -44,7 +44,7 @@ if(env.name == 'development'){
         outputStyle: 'extended',
         prefix: '/css'
     }));
-}
+// }
 
 
 const flash = require('connect-flash');
