@@ -52,10 +52,10 @@ const customMware = require('./config/middleware');
 
 
 // setup the chat server
-const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
-chatServer.listen(5000);
-console.log('Chat server is listening on port 5000');
+// const chatServer = require('http').Server(app);
+// const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+// chatServer.listen(5000);
+// console.log('Chat server is listening on port 5000');
 
 
 // {MIDDLEWARES}--->
