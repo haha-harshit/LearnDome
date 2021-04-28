@@ -1,6 +1,6 @@
 const express = require('express');
 const passport = require('passport');
-const { pass } = require('../../codeial/config/mongoose');
+
 
 const router = express.Router();
 

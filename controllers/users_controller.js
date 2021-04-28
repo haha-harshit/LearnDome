@@ -2,7 +2,6 @@
 const Course = require('../models/course');
 const Student = require('../models/student');
 const Instructor = require('../models/instructor');
-const { profile } = require('../../codeial/controllers/users_controllers');
 
 const fs = require('fs');
 const path = require('path');
