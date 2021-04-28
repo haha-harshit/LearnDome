@@ -6,6 +6,7 @@
 
     <h1>Your Courses</h1>
 
+
     <br>
     <br>
         <% for(i of myCourse.enrolledCourses){ %>
@@ -15,19 +16,34 @@
                 </li>
             </ul>    
         <% } %>
-
-
-
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <section id="stu-instructors">
-        <h3>Instructors</h3>
+        <h3>Our Instructors</h3>
+        <br>
+        <br>
         <% for(u of all_inst){ %>
-            
-            <p>
-                <a href="/user/v-profile/<%= u.id %>"><%= u.username %></a>
-            </p>    
+            <ul>
+                <li id="<%=u.id%>" style="list-style: none;">
+                    <div class="enrolled-user">
+                        <div class="user-img" class="user">
+                            <img src="<%= u.avatar %>" alt="profile-image">
+                        </div>
+                        <div class="user-name" class="user">
+                            <a href="/user/v-profile/<%= u.id %>"><%= u.username %></a>
+                        </div>
+                    </div>
+                </li>
+                <br>
+                <br>
+            </ul>
         <% } %>
     </section>
 

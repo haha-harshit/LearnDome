@@ -8,3 +8,27 @@
     /* font-weight: 900; */
     font-size: 50px;
 }
+
+#enroll-now{
+    padding: 10px;
+    border-radius: 2px;
+    border-color: blueviolet;
+}
+
+.enrolled-user{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-img{
+    height: 40px;
+    width: 40px;
+}
+.user-img img{
+    height: inherit;
+    width: inherit;
+}
+.user{
+    display: inline-block;
+} 

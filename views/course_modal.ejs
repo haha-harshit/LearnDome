@@ -12,24 +12,24 @@
             <div id="course-name">
                 <%= c.c_name %>
             </div>
-            <small id="rating-no">
-                Ratings: 4
-            </small>
+            
             <br>
             <small id="reviews-no">
-                398 Reviews
+                <!-- 398 Reviews -->
             </small>
             <br>
-            <small id="course-org">
-                uploaded by: <%= c.instructor.username %>
+            <small id="course-org" style="font-size: 15px;">
+                Uploaded by: <%= c.instructor.username %>
             </small>
             <br>
-            <small>
-                organization: <%= c.instructor.organization %>
+            <small style="font-size: 15px;">
+                Organization: <%= c.instructor.organization %>
             </small>
             <br>
         </div>
         <br>
+        <br>
+        <div id="divider" style="display: block; width: 100%; height: 2px; background-color: #aa09ea;"></div>
         <!-- <br> -->
 
         <% if(locals.user.enrolledCourses.includes(c._id)){%>
@@ -54,7 +54,7 @@
                     </form> -->
                     <form action="/course/enroll-course" method="post">
                         <input type="text" name="enrolled_c_id" id="enroll-c-id" style="display: none;" value="<%= c._id %>">                                
-                        <input type="submit" value="Enroll in the Course">
+                        <input type="submit" id="enroll-now" value="Enroll in the Course">
                     </form>
                 </div>
             </div>
@@ -69,18 +69,32 @@
                 </article>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
 
+
+        
         <div id="stu-in-course" style="display: block; background-color:cadetblue; padding: 20px; border-radius: 5px;">
             <h2>Students Enrolled in this Course</h2>
                 <% for(x of c.students){ %>
                     <ul>
-                        <li id="<%=x.id%>">
-                            <a href=""><%= x.username %></a>
+                        <li id="<%=x.id%>" style="list-style: none;">
+                            <div id="enrolled-user">
+                                <div id="user-img" class="user">
+                                    <img src="<%= x.avatar %>" alt="profile-image">
+                                </div>
+                                <div id="user-name" class="user">
+                                    <a href=""><%= x.username %></a>
+                                </div>
+                            </div>
                         </li>
+                        <br>
+                        <br>
                     </ul>
                 <% } %>
         </div>
-
+        
 
     </div>
 

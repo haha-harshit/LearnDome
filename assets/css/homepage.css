@@ -205,8 +205,9 @@ label #sidebar-btn:hover {
   width: 150px; }
 
 .song-description-1 {
-  color: white;
+  color: #aa09ea;
   text-decoration: none;
+  text-align: center;
   padding-left: 15px;
   padding-right: 15px; }
 
@@ -215,7 +216,7 @@ label #sidebar-btn:hover {
   padding-bottom: 10px;
   font-size: 14px;
   font-family: sans-serif;
-  color: lightgray;
+  color: dimgray;
   margin-top: -10px;
   max-width: 150px;
   overflow: hidden;
