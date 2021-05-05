@@ -37,7 +37,7 @@ const path = require('path');
 
 const sassMiddleware = require('node-sass-middleware');
 
-app.use(sassMiddleware({
+app.use(sassMiddleware({ 
     src: path.join(env.asset_path, 'scss'),
     dest: path.join(env.asset_path, 'css'),
     debug: true,
@@ -51,11 +51,11 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
 
-// setup the chat server
-// const chatServer = require('http').Server(app);
-// const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
-// chatServer.listen(5000);
-// console.log('Chat server is listening on port 5000');
+// setup the chat server to be used with socket.io
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('Chat server is listening on port 5000');
 
 
 // {MIDDLEWARES}--->
@@ -118,7 +118,7 @@ app.use(customMware.setFlash);
 
 // use express router
 app.use('/', require('./routes/index'));
-
+ 
 
 app.listen(port, function(err){
     if(err){

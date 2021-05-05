@@ -131,7 +131,13 @@ module.exports.delete_course = async function(req, res){
 // STUDENT COURSE-MODAL with ASYNC/AWAIT
 module.exports.course_modal = async function(req, res){
     try{
-        let courses = await Course.findById(req.params.id).populate('instructor').populate('students');
+        let courses = await Course.findById(req.params.id).populate('instructor').populate('students')
+        .populate({
+            path: 'c_reviews',
+            populate: {
+                path: 'student'
+            }
+        });
         return res.render('course_modal',{
             title: 'LearnDome',
             c: courses,
@@ -212,12 +218,7 @@ module.exports.course_enroll = async function(req, res){
             enrolling_student.save();
             course.students.push(req.user);
             course.save();
-            // req.flash('success', 'Successfully Enrolled!');
-
-            // course = await course.populate('stuednts')
             enrollmentMailer.newEnrollment(enrolling_student);
-            // enrollmentMailer.newEnrollment(course);
-
             console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field");
         }else{
@@ -225,12 +226,7 @@ module.exports.course_enroll = async function(req, res){
             enrolling_student.save();
             course.students.push(req.user);
             course.save();
-
-            // course = await course.populate('students email').execPopulate();
             enrollmentMailer.newEnrollment(enrolling_student);
-            // enrollmentMailer.newEnrollment(course);
-
-            // req.flash('success', 'Successfully Enrolled!');
             console.log('Successfully Enrolled!');
             console.log("Student added in Courses's student field");
         }
@@ -267,4 +263,5 @@ module.exports.course_enroll = async function(req, res){
     // });
     // req.flash('success', 'Successfully Enrolled!');
     // return res.redirect('back');
+
 

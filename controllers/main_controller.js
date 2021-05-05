@@ -10,10 +10,41 @@ module.exports.main = function(req, res){
         return res.redirect('/homepage');
     }
 
-    return res.render('main', {
+    return res.render('main_test', {
         title: 'LearnDome',
     })
 }
+
+
+// ***TEST***
+
+module.exports.student = function(req, res){
+    // check if signed-in
+    if(req.isAuthenticated()){
+        return res.redirect('/homepage');
+    }
+
+    return res.render('in_up_stu', {
+        title: 'LearnDome | Student',
+    })
+}
+
+module.exports.instructor = function(req, res){
+    // check if signed-in
+    if(req.isAuthenticated()){
+        return res.redirect('/homepage');
+    }
+
+    return res.render('in_up_inst', {
+        title: 'LearnDome | Instructor',
+    })
+}
+
+
+
+
+
+
 
 // access sign-up
 module.exports.stu_sign_up = function(req, res){
@@ -33,7 +64,7 @@ module.exports.inst_sign_up = function(req, res){
     }
 
     return res.render('_instructor_signup', {
-        title: 'LearnDome | Sign Up',
+        title: 'LearnDome | Sign Up', 
     }) 
 }
 
@@ -122,7 +153,7 @@ module.exports.create_stu_account = function(req, res){
                         req.flash('success', 'Student Account Successfully Created!');
                         // req.flash('success', 'Successfully Enrolled!');
                         console.log('Account created successfully!', user)
-                        return res.redirect('log-in-student');
+                        return res.redirect('student');
                     })      
                 }
             })
@@ -187,7 +218,7 @@ module.exports.create_inst_account = function(req, res){
                         }
                         req.flash('success', 'Instructor Account Successfully Created!');
                         console.log('Account created successfully!', user)
-                        return res.redirect('log-in-instructor');
+                        return res.redirect('instructor');
                     })      
                 }
             })

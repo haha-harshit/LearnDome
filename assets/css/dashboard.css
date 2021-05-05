@@ -3,6 +3,12 @@
   /* background-color:chartreuse; */
   /* text-align: center; */ }
 
+.divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #F2E1F2; }
+
 #course-name {
   /* font-weight: 900; */
   font-size: 50px; }
@@ -12,17 +18,49 @@
   border-radius: 2px;
   border-color: blueviolet; }
 
-.enrolled-user {
+#enrolled-user {
   display: flex;
   width: 20%;
   justify-content: space-between;
   align-items: center; }
 
-.user-img {
+#user-name {
+  height: 40px;
+  width: 174px;
+  display: flex; }
+
+#user-name-in {
+  margin: auto;
+  margin-left: inherit;
+  padding-left: 15px; }
+
+#user-name-2-in {
+  margin: auto;
+  margin-left: inherit;
+  padding-left: 5px; }
+
+#user-img {
   height: 40px;
   width: 40px; }
 
-.user-img img {
+#user-img img {
+  height: inherit;
+  width: inherit; }
+
+.user {
+  display: inline-block; }
+
+#review-user {
+  display: flex;
+  width: 17%;
+  justify-content: space-between;
+  align-items: center; }
+
+#user-img-review {
+  height: 20px;
+  width: 20px; }
+
+#user-img-review img {
   height: inherit;
   width: inherit; }
 

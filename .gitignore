@@ -1,2 +1,16 @@
 node_modules/
 production_logs/
+
+
+
+export NODE_ENV="production"
+export LD_DB="LearnDome_production"
+export LD_GMAIL_PASSWORD="(h@a@p@y@s)5"
+export LD_GMAIL_USERNAME="domelearn@gmail.com"
+export LD_GOOGLE_CLIENT_ID="829064347152-1eoc8svt8e6fjgqpogitagvo3c0rf15v.apps.googleusercontent.com"
+export LD_GOOGLE_CLIENT_SECRET="JkUSTDqMT4WwMmH0MhQrmv5f"
+export LD_INST_GOOGLE_CALLBACK_URL="http://localhost:8000/i-callback"
+export LD_JWT_SECRET="PSoQGTdChyNmeoKgDS3HmlnSk9MwoYPu"
+export LD_SESSION_COOKIE_KEY="2xSi1pfsUn6ZoGtd6o0bfJjZXkwEOEwm"
+export LD_STU_GOOGLE_CALLBACK_URL="http://localhost:8000/s-callback"
+export LEARNDOME_ASSET_PATH="C:\Users\HARSHIT\Desktop\node_ws\LearnDome\public"/assets"

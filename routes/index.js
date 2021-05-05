@@ -4,7 +4,8 @@ const router = express.Router();
 
 const passport = require('passport');
 
-const mainController = require('../controllers/main_controller');
+const mainController = require('../controllers/main_controller');  
+const { route } = require('./users');
 // const homeController = require('../controllers/home_controller');
  
 
@@ -17,6 +18,13 @@ router.get('/sign-up-instructor', mainController.inst_sign_up);
 // for log-in-form
 router.get('/log-in-student', mainController.log_in_student);
 router.get('/log-in-instructor', mainController.log_in_instructor);
+
+
+// ***TEST***
+router.get('/student', mainController.student);
+router.get('/instructor', mainController.instructor);
+
+
 
 // creating account- posting data(signing up)
 router.post('/create-stu-account', mainController.create_stu_account);
@@ -57,5 +65,5 @@ router.get('/destroy-session', mainController.destroy_session);
 router.use('/user', require('./users'));
 router.use('/homepage', require('./home'));
 router.use('/course', require('./course'));
-
+router.use('/review', require('./review'));
 module.exports = router;

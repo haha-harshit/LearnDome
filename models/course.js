@@ -12,7 +12,7 @@ const courseSchema = new mongoose.Schema({
         required: true
     }, 
  
-    c_name: {
+    c_name: { 
         type: String,
         required: true
     },
@@ -21,6 +21,13 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+
+    c_reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review' 
+        }
+    ],
 
     students:[
         {

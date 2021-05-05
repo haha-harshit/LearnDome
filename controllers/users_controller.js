@@ -114,7 +114,7 @@ module.exports.i_profile = function(req, res){
 // viewing instructor profile
 module.exports.inst_profile = function(req, res){
     Instructor.findById(req.params.id, function(err, instructor){
-        return res.render('v_profile', {
+        return res.render('v_profile', { 
             title: 'LearnDome',
             i: instructor,
             layout: '../views/student_layout/layout'
@@ -138,19 +138,8 @@ module.exports.inst_update_profile = function(req, res){
     });
 }
 
-// updating-instructor
-// module.exports.inst_update_profile_ok = function(req, res){
-//     if(req.user.id == req.params.id){
-//         Instructor.findByIdAndUpdate(req.params.id, req.body, function(err, inst){
-//             req.flash('success', 'Profile Updated!');
-//             return res.redirect('back');
-//         });
-//     }else{
-//         req.flash('error', "Couldn't perform this action");
-//         return res.staus(401).send('UNAUTHORIZED REQUEST!');
-//     };
-// };
 
+// updating-instructor
 module.exports.inst_update_profile_ok = async function(req, res){
     if(req.user.id == req.params.id){
         try{
@@ -193,19 +182,6 @@ module.exports.inst_update_profile_ok = async function(req, res){
 
 
 // updating-student
-// module.exports.stu_update_profile_ok = function(req, res){
-//     if(req.user.id == req.params.id){
-//         Student.findByIdAndUpdate(req.params.id, req.body, function(err, stu){
-//             req.flash('success', 'Profile Updated!');
-//             return res.redirect('back');
-//         });
-//     }else{
-//         req.flash('error', "Couldn't perform this action");
-//         return res.staus(401).send('UNAUTHORIZED REQUEST!');
-//     };
-// };
-
-
 module.exports.stu_update_profile_ok = async function(req, res){
     if(req.user.id == req.params.id){
         try{
@@ -228,7 +204,7 @@ module.exports.stu_update_profile_ok = async function(req, res){
                         fs.unlinkSync(path.join(__dirname, '..', stu.avatar));
                     }
 
-                    stu.avatar = Student.avatarPath + '/' + req.file.filename
+                    stu.avatar = Student.avatarPath + '/' + req.file.filename 
                 }
                 stu.save();
                 req.flash('success', 'Profile Updated!');
@@ -244,4 +220,10 @@ module.exports.stu_update_profile_ok = async function(req, res){
     };
 };
 
-
+// user CHAT
+module.exports.chat = function(req, res){
+    return res.render('_chat_box', {
+        title: 'LearnDome | Collab',
+        layout: '../views/student_layout/layout'
+    })
+}

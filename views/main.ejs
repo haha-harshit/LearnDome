@@ -1,653 +1,657 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to E Learning Site</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/overlay.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>LearnDome</title>
+  
+  <!-- owl carousel css --> 
+  <link rel="stylesheet" href="./css/owl.carousel.min.css"> 
+  <!-- font awesome icons --> 
+  <link rel="stylesheet" href="./css/font-awesome.css"> 
+  <!-- bootstrap css --> 
+  <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+  <!-- main css -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./css/overlay.css">
+
 </head>
-
 <body>
-    <div class="main-wrapper">
-        <div class="nav-background">
-            <div class="mobile-logo">
-                <img src="./icons/logo.svg" alt="">
-            </div>
-            <div class="mobile-nav">
-                <div class="cart">
-                    <div class="flex items-center">
-                        <img src="./icons/cart-dark.svg" alt="">
-                        <a href="#">0 Items - ($0.00)</a>
-                    </div>
-                </div>
-                <div class="nav-top">
-                    <ul>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">About us</a>
-                        </li>
-                        <li>
-                            <a href="#">Products</a>
-                        </li>
-                        <li>
-                            <a href="#">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Shop</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact us</a>
-                        </li>
-                        <li>
-                            <a href="#">Log in</a>
-                        </li>
-                        <li>
-                            <a href="#">Register</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contact flex items-center">
-                    <img src="./icons/phone.svg" alt="">
-                    <div>
-                        <h5>Call us: (+84) 123 456 789</h5>
-                        <h6>E-mail : support@freshmeal.com</h6>
-                    </div>
-                </div>
-                <div class="time flex items-center">
-                    <img src="./icons/clock.svg" alt="">
-                    <div>
-                        <h5>Working Hours:</h5>
-                        <h6>Mon - Sat (8.00am - 12.00am)</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="site-content-wrapper">
-            <div class="nav-trigger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-bar-chart">
-                    <line x1="12" y1="20" x2="12" y2="10" />
-                    <line x1="18" y1="20" x2="18" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="16" /></svg>
-            </div>
-            <!------HEADER ------>
-            <div class="site-content">
-                <header class="topbar">
-                    <div class="container flex justify-between items-center">
-                        <div class="icons">
-                            <a href="#"><img src="./icons/facebook.svg" alt=""></a>
-                            <a href="#"><img src="./icons/twitter.svg" alt=""></a>
-                            <a href="#"><img src="./icons/google.svg" alt=""></a>
-                            <a href="#"><img src="./icons/instagram.svg" alt=""></a>
-                            <a href="#"><img src="./icons/search.svg" alt=""></a>
-                        </div>
-                        <div class="auth flex items-center">
-                            <!-- <div>
-                                
-                                <a href="">
-                                    <img src="./icons/user-icon.svg" alt="">
-                                    Log in
-                                </a>
-                            </div> -->
-                            
 
-                                                            <!-- for Login -->
+  <!-- Preloader Start -->
+    <div class="preloader">
+      <span></span>
+    </div>
+  <!-- Preloader End -->
 
-                            <!-- The overlay -->
-                            <div id="myNav" class="overlay">
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">LearnDome</a>
 
-                                <!-- Button to close the overlay navigation -->
-                                <a href="javascript:void(0)" class="closebtn" onclick="close_l_Nav()">&times;</a>
-                                <!-- Overlay content -->
-                                <div class="overlay-content">
-                                    <h1>You are?</h1>
-                                    <br>
-                                    <div class="hey">
-                                        <a class="links" href="/log-in-student">STUDENT</a>
-                                        <a class="links" href="/log-in-instructor">INSTRUCTOR</a>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                            <!-- Use any element to open/show the overlay navigation menu -->
-                            <span style="cursor: pointer;" onclick="open_l_Nav()">Login</span>
-                            
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <i class="fas fa-bars"></i>
+        </button>
 
-                            <!-- <button class="open-button" onclick="openLoginForm()">Log In</button> -->
-                            <div class="form-popup" id="login-popup">
-                                
-                                <form action="/" class="form-container">
-                                    <h1>Login as...</h1>
-                                    <div class="student">
-                                        <h4>
-                                            <a class="opt" href="/log-in-student">Log In as a STUDENT</a>
-                                        </h4>
-                                    </div>
-                                    <br>
-                                    <div class="instructor">
-                                        <h4>
-                                            <a class="opt" href="/log-in-instructor">Log In as a INSTRUCTOR</a>
-                                        </h4>  
-                                    </div>
-                                    
-                                    <!-- <label for="email"><b>Email</b></label>
-                                    <input type="text" placeholder="Enter Email" name="email" required>
-                              
-                                    <label for="psw"><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" name="psw" required>
-                              
-                                    <button type="submit" class="btn">Login</button> -->
-                                    <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
-                                </form>
-                            </div>
-
-                            <span class="divider">|</span>
-                            
-                                                        <!-- for sign up -->
-                            <!-- The overlay -->
-                            <div id="my_s_Nav" class="overlay">
-
-                                <!-- Button to close the overlay navigation -->
-                                <a href="javascript:void(0)" class="closebtn" onclick="close_s_Nav()">&times;</a>
-                            
-                                <!-- Overlay content -->
-                                <div class="overlay-content">
-                                    <h1>You are?</h1>
-                                    <br>
-                                    <div>
-                                        <a class="links" href="/sign-up-student">STUDENT</a>
-                                        <a class="links" href="/sign-up-instructor">INSTRUCTOR</a>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                            
-                            <!-- Use any element to open/show the overlay navigation menu -->
-                            <span style="cursor: pointer;" onclick="open_s_Nav()">Sign Up</span>
-
-
-
-                            <!-- <button class="open-button" onclick="openSignupForm()">Sign Up</button> -->
-                            <div class="form-popup" id="signup-popup">
-                                
-                                <form action="/" class="form-container">
-                                    <h1>Sign Up as...</h1>
-                                    <div class="student">
-                                        <h4>
-                                            <a class="opt" href="/sign-up-student">Sign Up as a STUDENT</a>
-                                        </h4>
-                                    </div>  
-                                    <br>
-                                    <div class="instructor">
-                                        <h4>
-                                            <a class="opt" href="/sign-up-instructor">Sign Up as a INSTRUCTOR</a>
-                                        </h4>
-                                    </div>
-                                    
-                                  <!-- <label for="email"><b>Email</b></label>
-                                  <input type="text" placeholder="Enter Email" name="email" required>
-                              
-                                  <label for="psw"><b>Password</b></label>
-                                  <input type="password" placeholder="Enter Password" name="psw" required>
-                              
-                                  <button type="submit" class="btn">Login</button> -->
-                                  <button type="button" class="btn cancel" onclick="closeSignupForm()">Close</button>
-                                </form>
-                            </div>
-                            <!-- <span class="divider">|</span> -->
-
-
-                             
-                            
-
-                            
-                        </div>
-                    </div>
-                </header>
-
-                <nav>
-                    <div class="top">
-                        <div class="container flex justify-between">
-                            <div class="contact flex items-center">
-                                <img src="./icons/phone.svg" alt="">
-                                <div>
-                                    <h5>Call US: (+91) 123 456 789</h5>
-                                    <h6>E-mail : support@learndome.com</h6>
-                                </div>
-                            </div>
-                            <div class="branding">
-                                <img src="./images/learndome.png" alt="">
-                            </div>
-                            <div class="time flex items-center">
-                                <img src="./icons/clock.svg" alt="">
-                                <div>
-                                    <h5>Teach on LearnDome</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navbar magic-shadow">
-                        <div class="container flex justify-center">
-                            <a href="#" class="active">Home</a>
-                            <a href="#">About us</a>
-                            <a href="#">Courses</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Services</a>
-                            <a href="#">Contact us</a>
-                        </div>
-                    </div>
-                </nav>
-
-                <header class="hero flex items-center">
-                    <div class="container">
-                        <div class="welcome flex items-center">
-                            <span>Welcome to LearnDome</span>
-                        </div>
-                        <h1>The World Best <span>E-Learning</span> Website</h1>
-                        <h3>The world's largest selection of courses</h3>
-                        <p>Choose from 130,000 online video courses with new additions published every month
-                        </p>
-                        <div>
-                            <button class="btn btn-primary">Read More</button>
-                            <button class="btn btn-secondary">Enroll Now</button>
-                        </div>
-                        <div class="hero-image">
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                </header>
-
-                <section class="top-products">
-                    <div class="container">
-                        <h1 class="section-heading">Top Courses</h1>
-                        <div class="slider">
-                            <button class="slider-btn prev-btn"><img src="./icons/pre.svg" alt=""></button>
-                            <button class="slider-btn next-btn"><img src="./icons/next.svg" alt=""></button>
-                            <div class="food-slider">
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/python.jpg" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Python</h2>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            $ 1.25
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Add to cart</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/ml.jpg" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Machine Learning</h2>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            $ 1.25
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Add to cart</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/java.png" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Java</h2>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            $ 1.25
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Add to cart</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/cc.jpg" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Cloud Computing</h2>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            $ 1.25
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Add to cart</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center btn-wrapper">
-                            <button class="btn btn-secondary">View More</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="about-meal">
-                    <div class="container">
-                        <h1 class="section-heading">About Learn Dome</h1>
-                        <div class="about-meal-wrap flex">
-                            <div class="flex-1">
-                                <img src="./images/main.jpg" alt="">
-                            </div>
-                            <div class="flex-1">
-                                <h2>Transform your life through education</h2>
-                                <p>Top instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
-                                <button class="btn btn-secondary">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="our-services">
-                    <div class="container">
-                        <h1 class="section-heading">Our services</h1>
-                        <div class="card-wrapper flex">
-                            <div class="service-card magic-shadow-sm">
-                                <img class="icon" src="./icons/transport.svg" alt="">
-                                <h2>.......</h2>
-                                <p>We've changed lives by connecting instructors with students around the world.</p>
-                                <button class="btn btn-secondary">Read More</button>
-                            </div>
-                            <div class="service-card magic-shadow-sm">
-                                <img class="icon" src="./icons/bag.svg" alt="">
-                                <h2 class="text-primary">.......</h2>
-                                <p>We've changed lives by connecting instructors with students around the world.</p>
-                                <button class="btn btn-primary">Read More</button>
-                            </div>
-                            <div class="service-card magic-shadow-sm">
-                                <img class="icon" src="./icons/usd.svg" alt="">
-                                <h2>.......</h2>
-                                <p>We've changed lives by connecting instructors with students around the world.</p>
-                                <button class="btn btn-secondary">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="big-deal">
-                    <div class="container">
-                        <h1 class="section-heading text-pure">Big Deals of the Week</h1>
-                        <div class="timer">
-                            <div>
-                                <span>02</span>
-                                <span>Days</span>
-                            </div>
-                            <div>
-                                <span>24</span>
-                                <span>Hours</span>
-                            </div>
-                            <div>
-                                <span>55</span>
-                                <span>Minutes</span>
-                            </div>
-                            <div>
-                                <span>58</span>
-                                <span>Seconds</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="latest-news">
-                    <div class="container">
-                        <h1 class="section-heading">Lastest News from Blog</h1>
-                        <div class="article-wrapper">
-                            <article class="card magic-shadow-sm">
-                                <div>
-                                    <img src="" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="post-meta flex items-center justify-between">
-                                        <span>March 03, 2021</span>
-                                        <div>
-                                            <span>Posted by <strong>LearnDome</strong></span>
-                                            <span class="comment-count">12 Comments</span>
-                                        </div>
-                                    </div>
-
-                                    <h2></h2>
-                                    <p>Launching my first course on LearnDome allowed me to quit my full-time job and start my own company. I went from working 60+ hour weeks to setting my own hours and schedule.</p>
-                                </div>
-                            </article>
-                            <article class="card magic-shadow-sm">
-                                <div>
-                                    <img src="" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="post-meta flex items-center justify-between">
-                                        <span>March 03, 2021</span>
-                                        <div>
-                                            <span>Posted by <strong>LearnDome</strong></span>
-                                            <span class="comment-count">12 Comments</span>
-                                        </div>
-                                    </div>
-
-                                    <h2></h2>
-                                    <p>There's no greater success on the LearnDome marketplace than hearing that you've helped a student achieve their goals. Teaching on LearnDome has brought me new relationships from wonderful and insatiably curious students..</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="text-center btn-wrapper">
-                            <button class="btn btn-secondary">View All</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="subscribe">
-                    <div class="container flex items-center">
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                        <div>
-                            <h1>Subscribe to your newsletter</h1>
-                            <p>Learn from instructors who practice what they teach.</p>
-                            <div class="input-wrap">
-                                <input type="email" placeholder="email@learndome.com">
-                                <button>Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="contact-us flex">
-                    <div class="contact-info-wrapper">
-                        <h1 class="section-heading">Contact us</h1>
-                        <div class="contact-info">
-                            <div>
-                                <div>
-                                    <img src="./icons/phone-2.svg" alt="">
-                                    <div>
-                                        <span>Call us:</span>
-                                        <span>(+91) 123 456 789</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="./icons/bag-2.svg" alt="">
-                                    <div>
-                                        <span>E-mail ::</span>
-                                        <span>support@learndome.com</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="./icons/clock-2.svg" alt="">
-                                    <div>
-                                        <span>Working Hours:</span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206253.45012861438!2d-115.31508258571672!3d36.124918453865035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80beb782a4f57dd1%3A0x3accd5e6d5b379a3!2sLas%20Vegas%2C%20NV%2C%20USA!5e0!3m2!1sen!2sru!4v1580850940897!5m2!1sen!2sru"
-                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                    </div>
-                </section>
-
-                <footer>
-                    <div class="container">
-                        <div class="box">
-                            <h3>About us</h3>
-                            <p>Our Instructor Support Team is here for you 24/7 to help you through your course creation needs. Use our Teaching Center, a resource center to help you through the process. Join Studio U and get peer-to-peer support from our engaged instructor community. This community group is always on, always there, and always helpful.</p>
-                            <button class="btn btn-secondary">Read More</button>
-                        </div>
-                        <div class="box">
-                            <h3>Quik Links</h3>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">About us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Courses</a>
-                                </li>
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact us</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="box">
-                            <h3>Follow Us</h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/codersgyan">
-                                            <img src="./icons/facebook.svg" alt="">
-                                            <span>Facebook</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/CoderGyan">
-                                            <img src="./icons/twitter.svg" alt="">
-                                            <span>Twitter</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="./icons/google.svg" alt="">
-                                            <span>Google +</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/codersgyan/">
-                                            <img src="./icons/instagram.svg" alt="">
-                                            <span>Instagram</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="box instagram-api">
-                            <h3>Instagram</h3>
-                            <div class="post-wrap">
-                                <div>
-                                    <img src="./images/last1.jpg" alt="">
-                                </div>
-                                <div>
-                                    <img src="./images/last2.jpg" alt="">
-                                </div>
-                                <div>
-                                    <img src="./images/last3.jpg" alt="">
-                                </div>
-                                <div>
-                                    <img src="./images/last4.jpg" alt="">
-                                </div>
-                                <div>
-                                    <img src="./images/last5.jpg" alt="">
-                                </div>
-                                <div>
-                                    <img src="./images/last6.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <footer class="copyright">
-                    <div>
-                        Copyright © 2020 .All rights reserved by LearnDome
-                    </div>
-                </footer>
-            </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" data-scroll-nav="0" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="1" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="2" href="#">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="3" href="#">Contact</a>
+            </li>
+          </ul>
         </div>
     </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- Home Section start -->
+
+  <section class="home d-felx align-items-center" id="home" data-scroll-index="0">
+    <div class="effect-wrap">
+      <i class="fas fa-plus effect effect-1"></i>
+      <i class="fas fa-plus effect effect-2"></i>
+      <i class="fas fa-circle-notch effect effect-3"></i>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="home-text">
+            <h1>World's Best E-Learning Platform </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <div class="home-btn">
+              <!-- log-in -->
+              <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="close_l_Nav()">&times;</a>
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <h1>You are?</h1>
+                    <br>
+                    <div class="hey">
+                        <a class="links" href="/log-in-student">STUDENT</a>
+                        <a class="links" href="/log-in-instructor">INSTRUCTOR</a>
+                    </div>
+                </div>
+              </div>
+              <span class="btn btn-1" style="cursor: pointer;" onclick="open_l_Nav()">Login</span>
+
+              <!-- sign-up -->
+              <div id="my_s_Nav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="close_s_Nav()">&times;</a>
+            
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <h1>You are?</h1>
+                    <br>
+                    <div>
+                        <a class="links" href="/sign-up-student">STUDENT</a>
+                        <a class="links" href="/sign-up-instructor">INSTRUCTOR</a>
+                    </div>
+                </div>
+              </div>
+              <span class="btn btn-1" style="cursor: pointer;" onclick="open_s_Nav()">Sign Up</span>
+              
+              <button type="button" class="btn btn-1 video-play-btn">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <div class="home-img">
+            <div class="circle">
+              
+            </div>
+            <img src="/images/1.png" alt="LearnDome">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Home Section end -->
+
+<!-- Feature Section Start -->
+  <section class="features section-padding" id="features" data-scroll-index="1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>Awsome <span>Features</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="owl-carousel feature-carousel">
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-book"></i></div>
+            <h3>Library</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-tv"></i></div>
+            <h3>Video Confrencing</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-headset"></i></i></div>
+            <h3>Chating</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <h3>Mail</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-edit"></i></div>
+            <h3>Query Sessions</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-star"></i></div>
+            <h3>User Friendly</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Feature Section End -->
+
+<!-- Fun Facts Section Started -->
+  <section class="fun-facts section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-5 d-felx align-items-center justify-content-center">
+          <div class="fun-facts-img">
+           <img src="/images/2.png" alt="fun facts">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-7">
+          <div class="section-title">
+            <h2>Some<span>Facts</span></h2>
+          </div>
+          <div class="fun-facts-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-1">
+                  <h3>4000+</h3>
+                  <span>Users</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-2">
+                  <h3>200+</h3>
+                  <span>Institutes</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-3">
+                  <h3>1000+</h3>
+                  <span>Courses</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-4">
+                  <h3>500+</h3>
+                  <span>Reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Fun Facts Section Started -->
+<!-- App download Section Start -->
+  <section class="app-download section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>Browser <span>Support</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-chrome"></i>
+          <h3>Google Chrome</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-edge"></i>
+          <h3>Microsoft Edge</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-firefox-browser"></i>
+          <h3>Firefox</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+<!-- App download Section End -->
+
+<!-- How it works section start-->
+  <section class="how-it-works section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>How it <span>Works</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">1</div>
+            <h3>create profile</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">2</div>
+            <h3>search course</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">3</div>
+            <h3>enroll</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item">
+            <div class="step">4</div>
+            <h3>explore</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- how it works section end-->
+
+<!-- Testimonial section start -->
+  <section class="testimonials section-padding" id="testimonial" data-scroll-index="2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>what our <span>clint </span>say</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" owl-carousel testimonials-carousel">
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t1.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Yash tyagi</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t2.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Anika Singh</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t3.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Harshit Kumar</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t4.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Prerna Sharma</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Testimonial section end -->
+
+<!-- Team Section start -->
+  <section class="team section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>team <span>member</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="owl-carousel team-carousel">
+          <div class=" team-item">
+            <img src="/images/h.png" alt="team">
+            <h3>Harshit Kumar</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/y.png" alt="team">
+            <h3>Yash Tyagi</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/a.png" alt="team">
+            <h3>Anika Singh</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/p.png" alt="team">
+            <h3>Prerna Arora</h3>
+            <span>Devloper</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Team Section End -->
+
+<!-- Faq Section Start -->
+  <section class="faq section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2> frequently <span>asked</span> quaries</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" data-toggle="collapse" data-target="#collapse-01">
+                <h3>100% Fluid Responsive</h3>
+              </div>
+              <div class="collapse show" id="collapse-01" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-02">
+                <h3>Clean Code</h3>
+              </div>
+              <div class="collapse" id="collapse-02" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-03">
+                <h3>Flat, Morden and Clean Design</h3>
+              </div>
+              <div class="collapse" id="collapse-03" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-04">
+                <h3>Custom Font Support</h3>
+              </div>
+              <div class="collapse" id="collapse-04" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Faq Section End -->
+
+<!-- Contact Section Start -->
+  <section class="contact section-padding" data-scroll-index="3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>get in <span>touch</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5">
+          <div class="contact-info">
+            <h3>For Any Quaries and Support</h3>
+            <div class="contact-info-item">
+              <i class="fas fa-location-arrow"></i>
+              <h4>Company Location</h4>
+              <p>199 yz street, New-Delhi</p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <h4>Write to us  at</h4>
+              <p>info@gmail.com</p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-phone"></i>
+              <h4>Call us on</h4>
+              <p>+91 98765 XX234</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7">
+          <div class="contact-form">
+            <form>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Name" class="form-control">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Email" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Phone" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Subject" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <textarea placeholder="Your Message" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <button type="submit" class="btn btn-2">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Contect Section End -->
+
+<!-- Footer Start -->
+  <section class="footer section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>About us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Teems & Condition</a></li>
+              <li><a href="#">Lates Blogs</a></li>
+              <li><a href="#">App Services</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Social pages</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Linkedin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="copyright-text">&copy;2021 @ LearnDome</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Footer End -->
+
+<!-- Toggle Theme Start -->
+  <div class="toggle-theme">
+    <i class="fas"></i>
+  </div>
+<!-- Toggle Theme End -->
 
 
+<!-- Video popup start -->
+  <div class="video-popup">
+    <div class="video-popup-inner">
+      <i class="fas fa-times video-popup-close"></i>
+      <div class="iframe-box">
+        <iframe id="player-1" src="https://www.youtube.com/embed/88PXJAA6szs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+<!-- Video popup end -->
+ 
+<!-- jquery js -->
+<script src="js/jquery.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- ScrollIt js -->
+<script src="js/scrollIt.min.js"></script>
+<!-- main js -->
+<script src="js/main.js"></script>
 
+<script src="js/side-slide.js"></script>
 
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/pop-up.js"></script>
-    <script src="js/side-slide.js"></script>
 </body>
-
 </html>

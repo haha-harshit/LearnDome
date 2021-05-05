@@ -9,6 +9,9 @@
     </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- <link rel="stylesheet" href="/css/layout.css"> -->
     <!-- extracting styles from subpages into layout -->
     <%- style %>
@@ -35,7 +38,7 @@
 				text: '<%= flash.success %>',
 				type: 'success',
 				layout: 'topRight',
-				timeout: 1500
+				timeout: 2000
 			}).show();
 
    		<% } %>
@@ -47,7 +50,7 @@
                 layout: 'topRight',
                 theme: 'relax',
                 text: '<%= flash.error %>',
-                timeout: 1500,
+                timeout: 2000,
                 date: Date.now()
             }).show();
 
@@ -60,7 +63,7 @@
                 layout: 'topRight',
                 theme: 'metroui',
                 text: '<%= flash.warning %>',
-                timeout: 1500,
+                timeout: 2000,
                 date: Date.now()
             }).show();
 
@@ -74,7 +77,7 @@
                 layout: 'topRight',
                 theme: 'mint',
                 text: '<%= flash.information %>',
-                timeout: 1500,
+                timeout: 2000,
                 date: Date.now()
             }).show();
 

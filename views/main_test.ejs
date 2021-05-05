@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>LearnDome</title>
+  
+  <!-- owl carousel css --> 
+  <link rel="stylesheet" href="./css/owl.carousel.min.css"> 
+  <!-- font awesome icons --> 
+  <link rel="stylesheet" href="./css/font-awesome.css"> 
+  <!-- bootstrap css --> 
+  <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+  <!-- main css -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="stylesheet" href="./css/overlay.css">
+
+</head>
+<body>
+
+  <!-- Preloader Start -->
+    <div class="preloader">
+      <span></span>
+    </div>
+  <!-- Preloader End -->
+
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">LearnDome</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" data-scroll-nav="0" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="1" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="2" href="#">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-scroll-nav="3" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- Home Section start -->
+
+  <section class="home d-felx align-items-center" id="home" data-scroll-index="0">
+    <div class="effect-wrap">
+      <i class="fas fa-plus effect effect-1"></i>
+      <i class="fas fa-plus effect effect-2"></i>
+      <i class="fas fa-circle-notch effect effect-3"></i>
+    </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="home-text">
+            <h1>World's Best E-Learning Platform </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <div class="home-btn"> 
+              <!-- log-in -->
+              <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="close_l_Nav()">&times;</a>
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <h1>You are?</h1>
+                    <br>
+                    <div class="hey">
+                        <a class="links" href="/student">STUDENT</a>
+                        <a class="links" href="/instructor">INSTRUCTOR</a>
+                    </div>
+                </div>
+              </div>
+              <span class="btn btn-1" style="cursor: pointer;" onclick="open_l_Nav()">Let's Go</span>
+              
+              <button type="button" class="btn btn-1 video-play-btn">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <div class="home-img">
+            <div class="circle">
+              
+            </div>
+            <img src="/images/1.png" alt="LearnDome">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Home Section end -->
+
+<!-- Feature Section Start -->
+  <section class="features section-padding" id="features" data-scroll-index="1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>Awsome <span>Features</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="owl-carousel feature-carousel">
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-book"></i></div>
+            <h3>Library</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-tv"></i></div>
+            <h3>Video Confrencing</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-headset"></i></i></div>
+            <h3>Chating</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <h3>Mail</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-edit"></i></div>
+            <h3>Query Sessions</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-star"></i></div>
+            <h3>User Friendly</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Feature Section End -->
+
+<!-- Fun Facts Section Started -->
+  <section class="fun-facts section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-5 d-felx align-items-center justify-content-center">
+          <div class="fun-facts-img">
+           <img src="/images/2.png" alt="fun facts">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-7">
+          <div class="section-title">
+            <h2>Some<span>Facts</span></h2>
+          </div>
+          <div class="fun-facts-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-1">
+                  <h3>4000+</h3>
+                  <span>Users</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-2">
+                  <h3>200+</h3>
+                  <span>Institutes</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-3">
+                  <h3>1000+</h3>
+                  <span>Courses</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="fun-fact-item style-4">
+                  <h3>500+</h3>
+                  <span>Reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Fun Facts Section Started -->
+<!-- App download Section Start -->
+  <section class="app-download section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>Browser <span>Support</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-chrome"></i>
+          <h3>Google Chrome</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-edge"></i>
+          <h3>Microsoft Edge</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="app-download-item">
+          <i class="fab fa-firefox-browser"></i>
+          <h3>Firefox</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <a href="#" class="btn btn-2">Download Now</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+<!-- App download Section End -->
+
+<!-- How it works section start-->
+  <section class="how-it-works section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>How it <span>Works</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">1</div>
+            <h3>create profile</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">2</div>
+            <h3>search course</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item line-right">
+            <div class="step">3</div>
+            <h3>enroll</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md6">
+          <div class="how-it-works-item">
+            <div class="step">4</div>
+            <h3>explore</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- how it works section end-->
+
+<!-- Testimonial section start -->
+  <section class="testimonials section-padding" id="testimonial" data-scroll-index="2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>what our <span>clint </span>say</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" owl-carousel testimonials-carousel">
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t1.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Yash tyagi</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t2.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Anika Singh</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t3.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Harshit Kumar</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="img-box">
+              <img src="/images/t4.jpg" alt="testimonial">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <h3>Prerna Sharma</h3>
+            <span>UI designer</span>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Testimonial section end -->
+
+<!-- Team Section start -->
+  <section class="team section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>team <span>member</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="owl-carousel team-carousel">
+          <div class=" team-item">
+            <img src="/images/h.png" alt="team">
+            <h3>Harshit Kumar</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/y.png" alt="team">
+            <h3>Yash Tyagi</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/a.png" alt="team">
+            <h3>Anika Singh</h3>
+            <span>Devloper</span>
+          </div>
+          <div class=" team-item">
+            <img src="/images/p.png" alt="team">
+            <h3>Prerna Arora</h3>
+            <span>Devloper</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Team Section End -->
+
+<!-- Faq Section Start -->
+  <section class="faq section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2> frequently <span>asked</span> quaries</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" data-toggle="collapse" data-target="#collapse-01">
+                <h3>100% Fluid Responsive</h3>
+              </div>
+              <div class="collapse show" id="collapse-01" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-02">
+                <h3>Clean Code</h3>
+              </div>
+              <div class="collapse" id="collapse-02" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-03">
+                <h3>Flat, Morden and Clean Design</h3>
+              </div>
+              <div class="collapse" id="collapse-03" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header collapsed" data-toggle="collapse" data-target="#collapse-04">
+                <h3>Custom Font Support</h3>
+              </div>
+              <div class="collapse" id="collapse-04" data-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Faq Section End -->
+
+<!-- Contact Section Start -->
+  <section class="contact section-padding" data-scroll-index="3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>get in <span>touch</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5">
+          <div class="contact-info">
+            <h3>For Any Quaries and Support</h3>
+            <div class="contact-info-item">
+              <i class="fas fa-location-arrow"></i>
+              <h4>Company Location</h4>
+              <p>199 yz street, New-Delhi</p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <h4>Write to us  at</h4>
+              <p>info@gmail.com</p>
+            </div>
+            <div class="contact-info-item">
+              <i class="fas fa-phone"></i>
+              <h4>Call us on</h4>
+              <p>+91 98765 XX234</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7">
+          <div class="contact-form">
+            <form>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Name" class="form-control">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Email" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Your Phone" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Subject" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <textarea placeholder="Your Message" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <button type="submit" class="btn btn-2">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Contect Section End -->
+
+<!-- Footer Start -->
+  <section class="footer section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>About us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Teems & Condition</a></li>
+              <li><a href="#">Lates Blogs</a></li>
+              <li><a href="#">App Services</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#testimonial">Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col">
+            <h3>Social pages</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Linkedin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="copyright-text">&copy;2021 @ LearnDome</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Footer End -->
+
+<!-- Toggle Theme Start -->
+  <div class="toggle-theme">
+    <i class="fas"></i>
+  </div>
+<!-- Toggle Theme End -->
+
+
+<!-- Video popup start -->
+  <div class="video-popup">
+    <div class="video-popup-inner">
+      <i class="fas fa-times video-popup-close"></i>
+      <div class="iframe-box">
+        <iframe id="player-1" src="https://www.youtube.com/embed/88PXJAA6szs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+<!-- Video popup end -->
+ 
+<!-- jquery js -->
+<script src="js/jquery.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- ScrollIt js -->
+<script src="js/scrollIt.min.js"></script>
+<!-- main js -->
+<script src="js/main.js"></script>
+
+<script src="js/side-slide.js"></script>
+
+</body>
+</html>

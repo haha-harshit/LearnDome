@@ -29,7 +29,7 @@
         </div>
         <br>
         <br>
-        <div id="divider" style="display: block; width: 100%; height: 2px; background-color: #aa09ea;"></div>
+        <div class="divider"></div>
         <!-- <br> -->
 
         <% if(locals.user.enrolledCourses.includes(c._id)){%>
@@ -77,6 +77,7 @@
         
         <div id="stu-in-course" style="display: block; background-color:cadetblue; padding: 20px; border-radius: 5px;">
             <h2>Students Enrolled in this Course</h2>
+            <br>
                 <% for(x of c.students){ %>
                     <ul>
                         <li id="<%=x.id%>" style="list-style: none;">
@@ -85,16 +86,78 @@
                                     <img src="<%= x.avatar %>" alt="profile-image">
                                 </div>
                                 <div id="user-name" class="user">
-                                    <a href=""><%= x.username %></a>
+                                    <div id="user-name-in">
+                                        <a href=""><%= x.username %></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <br>
-                        <br>
                     </ul>
                 <% } %>
         </div>
-        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="divider"></div>
+        <br>
+        <br>
+        <br>
+
+        <div id="course-review-out">
+            <div id="see-review-out"  style="width: 60%; display: inline-block;">
+                <h3>
+                    Here's how others like the Course...
+                </h3>
+                <br>
+                <div id="see-reviews" style="max-height: 300px; scroll-behavior:smooth; overflow-y: scroll; display: block;">
+                    
+                    <% for(a of c.c_reviews){ %>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>
+                                        <%= a.reviewContent %>
+                                        <br>
+                                        <div id="review-user">
+                                            <div id="user-img-review" class="user">
+                                                <img src="<%= a.student.avatar %>" alt="profile-image">
+                                            </div>
+                                            <div id="user-name" class="user">
+                                                <div id="user-name-2-in">
+                                                    <small><a href=""><%= a.student.username %></a></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <br>
+                                </li>
+                            </ul>
+                        </div>    
+                    <% } %>
+                </div>
+            </div>
+            
+            <div id="your-review" style="display: inline-block; width: 25%;">
+                <h3> 
+                    What's your say?
+                </h3>
+                <div id="course-review-in">
+                    <form action="/review/create-review" method="post">
+                        <textarea id="write-review" name="r_content" placeholder="Write your Review..." cols="40" rows="2" required></textarea>
+                        <input type="hidden" name="course" value="<%= c._id %>">
+                        <br>
+                        <input type="submit" id="" value="Post Review">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+
 
     </div>
 

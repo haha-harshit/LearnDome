@@ -35,4 +35,8 @@ router.post('/stu-update-profile-ok/:id', passport.checkAuthentication, usersCon
 // post update(instructor)
 router.post('/inst-update-profile-ok/:id', passport.checkAuthentication, usersController.inst_update_profile_ok);
 
+// for user CHAT
+router.get('/collab', passport.checkAuthentication, usersController.chat);
+
+
 module.exports = router;
