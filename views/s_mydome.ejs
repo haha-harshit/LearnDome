@@ -32,12 +32,14 @@
         <% for(u of all_inst){ %>
             <ul>
                 <li id="<%=u.id%>" style="list-style: none;">
-                    <div class="enrolled-user">
-                        <div class="user-img" class="user">
+                    <div id="enrolled-user">
+                        <div id="user-img" class="user">
                             <img src="<%= u.avatar %>" alt="profile-image">
                         </div>
-                        <div class="user-name" class="user">
-                            <a href="/user/v-profile/<%= u.id %>"><%= u.username %></a>
+                        <div id="user-name" class="user">
+                            <div id="user-name-in">
+                                <a href="/user/v-profile/<%= u.id %>""><%= u.username %></a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -45,6 +47,12 @@
                 <br>
             </ul>
         <% } %>
+
+
+        
+
+
+
     </section>
 
 </div>

@@ -1,16 +1,18 @@
 #user-chat-box {
   position: fixed;
+  bottom: 10px;
+  right: 10px;
   border: 1px dashed grey;
-  height: 70vh;
-  width: 50vw;
-  background: #dfdfdf;
+  height: 350px;
+  width: 350px;
+  background: white;
   padding: 5px;
   box-shadow: 1px 1px 1px 1px lightgray; }
   #user-chat-box #chat-messages-list {
     list-style: none;
     padding: 10px;
     height: 70%;
-    background-color: #dfdfdf;
+    background-color: white;
     overflow: auto; }
     #user-chat-box #chat-messages-list .other-message {
       text-align: left;
@@ -41,6 +43,3 @@
       color: white;
       border: none;
       background: #58d258; }
-
-.msg {
-  border-radius: 5px; }

@@ -53,7 +53,7 @@ module.exports.stu_sign_up = function(req, res){
         return res.redirect('/homepage');
     }
 
-    return res.render('_stu_signup', {
+    return res.render('in_up_stu', {
         title: 'LearnDome | Sign Up',
     })
 }
@@ -63,7 +63,7 @@ module.exports.inst_sign_up = function(req, res){
         return res.redirect('/homepage');
     }
 
-    return res.render('_instructor_signup', {
+    return res.render('in_up_inst', {
         title: 'LearnDome | Sign Up', 
     }) 
 }
@@ -76,7 +76,7 @@ module.exports.log_in_student = function(req, res){
         return res.redirect('/homepage');
     }
 
-    return res.render('_stu_login', {
+    return res.render('in_up_stu', {
         title: 'LearnDome | Login'
     })
 }
@@ -88,7 +88,7 @@ module.exports.log_in_instructor = function(req, res){
         return res.redirect('/homepage');
     }
 
-    return res.render('_inst_login', {
+    return res.render('in_up_inst', {
         title: 'LearnDome | Login'
     })
 }
