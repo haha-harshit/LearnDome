@@ -1,6 +1,6 @@
 .env
 node_modules/
-production_logs
+production_logs/
 
 
 # steps for deploy after ec2 runs
