@@ -3,4 +3,31 @@ node_modules/
 production_logs
 
 
+# steps for deploy after ec2 runs
 
+# --> install nvm from github-repo 
+# --> copy paste the 3 steps displayed after installation complete
+# --> run that
+
+# --> check 'nvm -v'
+
+# --> install node using "nvm install '-version of node' "
+# --> check the versions of node and npm installed
+
+# --> mongoDB server installation for ubuntu
+# STEPS:    
+#       1. wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add - (GET A OK RESPONSE)
+#       2. echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+#       3. sudo apt-get update
+#       4. sudo apt-get install -y mongodb-org
+#       5. echo "mongodb-org hold" | sudo dpkg --set-selections
+#          echo "mongodb-org-server hold" | sudo dpkg --set-selections
+#          echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+#          echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+#          echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+#       6. START
+
+# --> install redis
+
+# --> install PM2
+# cmd for PM2 -> npm install pm2 -g
