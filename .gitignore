@@ -1,6 +1,7 @@
 .env
 node_modules/
 production_logs/
+public/
 
 
 # steps for deploy after ec2 runs
@@ -37,3 +38,22 @@ production_logs/
 
 # --> move into that folder
 # --> do -> npm install = this will install all the modules(acc. to package.JSON). remember the node_modules folder which we didn't pushed.
+
+
+# installing GULP - FOR LATER!
+
+#import the secret keys and env paths to bash profile 
+# example 'export LD_DB: ____'
+# for opening bash profilel -> (vi ~/.bash_profile)
+# Alt+i to insert into the bash profile
+# esc to exit that cmd and :wq to save and exit the file
+# now source that bash profile using 'source ~/.bash_profile'
+# check by cmd -> 'node'
+#                  -> 'process.env' 
+# ctrl+c -> exit
+
+# install nodemon as well as we're not using pm2 now!
+# cmd -> 'npm install -g nodemon', -g for installing globally
+
+
+
