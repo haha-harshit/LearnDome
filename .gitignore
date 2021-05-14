@@ -6,6 +6,11 @@ public/
 
 # steps for deploy after ec2 runs
 
+# -->(first cmd to execute) curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+#   copy paste the next 3 lines.
+
+# start MongoDB if everything is already installed!
+
 # --> install nvm from github-repo 
 # --> copy paste the 3 steps displayed after installation complete
 # --> run that
@@ -26,7 +31,9 @@ public/
 #          echo "mongodb-org-shell hold" | sudo dpkg --set-selections
 #          echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
 #          echo "mongodb-org-tools hold" | sudo dpkg --set-selections
-#       6. START
+#       6. sudo systemctl start mongod  -(for start)
+
+
 
 # --> install redis
 
