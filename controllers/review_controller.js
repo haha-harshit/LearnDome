@@ -19,7 +19,7 @@ module.exports.create_review = async function(req, res){
                 course.c_reviews.push(review);
                 course.save();
     
-                review = await review.populate('student', 'username email').execPopulate();
+                // review = await review.populate('student', 'username email').execPopulate();
     
                 req.flash('success', 'Feedback Recorded!');
                 return res.redirect('back');

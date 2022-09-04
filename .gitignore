@@ -10,6 +10,8 @@ public/
 #   copy paste the next 3 lines.
 
 # start MongoDB if everything is already installed!
+# --> sudo systemctl start mongod
+
 
 # --> install nvm from github-repo 
 # --> copy paste the 3 steps displayed after installation complete

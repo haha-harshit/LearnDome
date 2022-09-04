@@ -221,3 +221,7 @@ label #sidebar-btn:hover {
   max-width: 150px;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+#course-upload-main {
+  padding-left: 15px;
+  padding-top: 15px; }
