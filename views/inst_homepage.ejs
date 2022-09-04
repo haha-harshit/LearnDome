@@ -7,8 +7,14 @@
     
         <form action="/course/create-course" id="course-upload-form" method="POST">
             <!-- <textarea name="content" id="" cols="30" rows="2" placeholder="Link of the course..."></textarea> -->
-            <input type="url" name="c_url" id="course-url" placeholder="Course Link..." required>
+            <label for="course_url">Enter a drive link: </label>
+            <input type="url" name="c_url" id="course-url" placeholder="Course link..." required>
+            <br>
+            <br>
+            <label for="course_name">Enter Course Name: </label>
             <input type="text" name="c_name" id="course-name" placeholder="Course Name..." required>
+            <br>
+            <br>
             <!-- <input type="text" name="c_description" id="course-des" placeholder="Description..." required> -->
             <textarea name="c_description" id="course-des" cols="30" rows="2" placeholder="Description..." required></textarea>
             <input type="submit" value="Upload">
